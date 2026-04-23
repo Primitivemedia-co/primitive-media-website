@@ -147,8 +147,7 @@ section { padding: 96px 48px; }
 .booking-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
 .booking-card { border: 1.5px solid var(--warm-gray); background: #fff; padding: 48px 40px; position: relative; overflow: hidden; }
 .booking-card.featured { border-color: var(--red); }
-.booking-card.featured::before { content: 'MOST POPULAR'; position: absolute; top: 20px; right: -28px; background: var(--red); color: #fff; font-size: 10px; letter-spacing: 1.5px; padding: 5px 40px; transform: rotate(45deg); }
-.booking-type { font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: var(--red); margin-bottom: 12px; }
+.booking-card.featured::before { content: 'MOST POPULAR'; position: absolute; top: 16px; left: 50%; transform: translateX(-50%); background: var(--red); color: #fff; font-size: 10px; letter-spacing: 1.5px; padding: 6px 24px; white-space: nowrap; }.booking-type { font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: var(--red); margin-bottom: 12px; }
 .booking-card h3 { font-family: 'Bebas Neue', sans-serif; font-size: 36px; color: var(--black); letter-spacing: 1px; margin-bottom: 8px; }
 .booking-price { font-size: 32px; font-weight: 300; color: var(--black); margin-bottom: 6px; }
 .booking-price span { font-size: 16px; color: var(--mid-gray); }
