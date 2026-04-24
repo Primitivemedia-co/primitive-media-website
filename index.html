@@ -18,8 +18,6 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; }
 body { font-family: 'DM Sans', sans-serif; background: var(--off-white); color: var(--text); overflow-x: hidden; }
-
-/* NAV */
 nav {
   position: fixed; top: 0; left: 0; right: 0; z-index: 100;
   display: flex; align-items: center; justify-content: space-between;
@@ -29,61 +27,23 @@ nav {
   border-bottom: 1px solid var(--warm-gray);
 }
 .nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
-.logo-hand { font-size: 22px; }
-.nav-brand { font-family: 'Bebas Neue', sans-serif; font-size: 22px; letter-spacing: 2px; color: var(--black); }
 .nav-links { display: flex; gap: 32px; list-style: none; }
 .nav-links a { text-decoration: none; font-size: 13px; font-weight: 500; color: var(--mid-gray); letter-spacing: 0.5px; transition: color 0.2s; }
 .nav-links a:hover { color: var(--red); }
 .nav-cta { background: var(--red); color: #fff; border: none; padding: 10px 24px; font-family: 'DM Sans', sans-serif; font-size: 13px; font-weight: 500; cursor: pointer; letter-spacing: 0.5px; transition: background 0.2s; text-decoration: none; }
 .nav-cta:hover { background: var(--red-dark); }
-
-/* HERO */
-.hero {
-  min-height: 100vh;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  padding-top: 80px;
-}
-.hero-left {
-  padding: 80px 48px 80px 48px;
-  display: flex; flex-direction: column; justify-content: center;
-  border-right: 1px solid var(--warm-gray);
-}
-.hero-eyebrow {
-  font-size: 11px; font-weight: 500; letter-spacing: 3px; text-transform: uppercase;
-  color: var(--red); margin-bottom: 24px;
-}
-.hero-left h1 {
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: clamp(64px, 7vw, 96px);
-  line-height: 0.95;
-  color: var(--black);
-  margin-bottom: 28px;
-  letter-spacing: 1px;
-}
+.hero { min-height: 100vh; display: grid; grid-template-columns: 1fr 1fr; padding-top: 80px; }
+.hero-left { padding: 80px 48px; display: flex; flex-direction: column; justify-content: center; border-right: 1px solid var(--warm-gray); }
+.hero-eyebrow { font-size: 11px; font-weight: 500; letter-spacing: 3px; text-transform: uppercase; color: var(--red); margin-bottom: 24px; }
+.hero-left h1 { font-family: 'Bebas Neue', sans-serif; font-size: clamp(64px, 7vw, 96px); line-height: 0.95; color: var(--black); margin-bottom: 28px; letter-spacing: 1px; }
 .hero-left h1 em { color: var(--red); font-style: normal; }
-.hero-left p {
-  font-size: 16px; line-height: 1.8; color: #555; max-width: 440px; margin-bottom: 40px; font-weight: 300;
-}
+.hero-left p { font-size: 16px; line-height: 1.8; color: #555; max-width: 440px; margin-bottom: 40px; font-weight: 300; }
 .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; }
-.btn-primary {
-  background: var(--red); color: #fff; padding: 14px 32px;
-  font-family: 'DM Sans', sans-serif; font-size: 14px; font-weight: 500;
-  border: none; cursor: pointer; letter-spacing: 0.5px; transition: background 0.2s; text-decoration: none; display: inline-block;
-}
+.btn-primary { background: var(--red); color: #fff; padding: 14px 32px; font-family: 'DM Sans', sans-serif; font-size: 14px; font-weight: 500; border: none; cursor: pointer; letter-spacing: 0.5px; transition: background 0.2s; text-decoration: none; display: inline-block; }
 .btn-primary:hover { background: var(--red-dark); }
-.btn-outline {
-  background: transparent; color: var(--black); padding: 14px 32px;
-  font-family: 'DM Sans', sans-serif; font-size: 14px; font-weight: 500;
-  border: 1.5px solid var(--black); cursor: pointer; letter-spacing: 0.5px; transition: all 0.2s; text-decoration: none; display: inline-block;
-}
+.btn-outline { background: transparent; color: var(--black); padding: 14px 32px; font-family: 'DM Sans', sans-serif; font-size: 14px; font-weight: 500; border: 1.5px solid var(--black); cursor: pointer; letter-spacing: 0.5px; transition: all 0.2s; text-decoration: none; display: inline-block; }
 .btn-outline:hover { background: var(--black); color: #fff; }
-
-.hero-right {
-  padding: 80px 48px;
-  display: flex; flex-direction: column; justify-content: center;
-  background: var(--black);
-}
+.hero-right { padding: 80px 48px; display: flex; flex-direction: column; justify-content: center; background: var(--black); }
 .hero-right .overline { font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: var(--mid-gray); margin-bottom: 40px; }
 .stats-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: #333; border: 1px solid #333; margin-bottom: 48px; }
 .stat-box { background: var(--black); padding: 32px 24px; }
@@ -94,28 +54,19 @@ nav {
 .brand-logos p { font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: #555; margin-bottom: 8px; }
 .brands { display: flex; flex-wrap: wrap; gap: 8px; }
 .brand-pill { background: #1a1a1a; border: 1px solid #333; padding: 6px 14px; font-size: 12px; color: #aaa; letter-spacing: 0.5px; }
-
-/* SECTION BASE */
 section { padding: 96px 48px; }
 .section-header { margin-bottom: 56px; }
 .overline { font-size: 11px; font-weight: 500; letter-spacing: 3px; text-transform: uppercase; color: var(--red); margin-bottom: 12px; }
 .section-title { font-family: 'Bebas Neue', sans-serif; font-size: clamp(40px, 5vw, 64px); color: var(--black); line-height: 1; letter-spacing: 1px; }
 .section-sub { font-size: 16px; color: #666; line-height: 1.8; max-width: 520px; margin-top: 16px; font-weight: 300; }
-
-/* SERVICES */
 #services { background: var(--off-white); border-top: 1px solid var(--warm-gray); }
 .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1px; background: var(--warm-gray); border: 1px solid var(--warm-gray); }
-.service-card {
-  background: var(--off-white); padding: 36px 32px;
-  transition: background 0.2s;
-}
+.service-card { background: var(--off-white); padding: 36px 32px; transition: background 0.2s; }
 .service-card:hover { background: #fff; }
 .service-num { font-family: 'Bebas Neue', sans-serif; font-size: 48px; color: var(--warm-gray); line-height: 1; margin-bottom: 16px; }
 .service-card h3 { font-size: 16px; font-weight: 500; color: var(--black); margin-bottom: 10px; }
 .service-card p { font-size: 14px; color: #777; line-height: 1.7; font-weight: 300; }
 .service-tag { display: inline-block; background: var(--red); color: #fff; font-size: 10px; letter-spacing: 1px; text-transform: uppercase; padding: 3px 8px; margin-top: 14px; }
-
-/* RESULTS */
 #results { background: var(--black); color: #fff; }
 #results .section-title { color: #fff; }
 #results .section-sub { color: var(--mid-gray); }
@@ -128,8 +79,6 @@ section { padding: 96px 48px; }
 .story-box { margin-top: 64px; border: 1px solid #333; padding: 48px; }
 .story-box blockquote { font-family: 'DM Serif Display', serif; font-size: clamp(18px, 2vw, 24px); color: #ccc; line-height: 1.6; font-style: italic; margin-bottom: 24px; }
 .story-box cite { font-size: 13px; color: var(--mid-gray); font-style: normal; letter-spacing: 1px; }
-
-/* PORTFOLIO */
 #portfolio { background: #fff; border-top: 1px solid var(--warm-gray); }
 .portfolio-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--warm-gray); border: 1px solid var(--warm-gray); }
 .port-item { background: #fff; aspect-ratio: 4/3; position: relative; overflow: hidden; cursor: pointer; }
@@ -141,13 +90,12 @@ section { padding: 96px 48px; }
 .port-overlay p { font-size: 12px; color: var(--mid-gray); }
 .port-overlay .port-tag { display: inline-block; background: var(--red); color: #fff; font-size: 10px; letter-spacing: 1px; text-transform: uppercase; padding: 3px 8px; margin-bottom: 10px; }
 .portfolio-note { margin-top: 32px; font-size: 14px; color: var(--mid-gray); font-style: italic; }
-
-/* BOOKING */
 #booking { background: var(--off-white); border-top: 1px solid var(--warm-gray); }
 .booking-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
 .booking-card { border: 1.5px solid var(--warm-gray); background: #fff; padding: 48px 40px; position: relative; overflow: hidden; }
 .booking-card.featured { border-color: var(--red); }
-.booking-card.featured::before { content: 'MOST POPULAR'; position: absolute; top: 16px; left: 50%; transform: translateX(-50%); background: var(--red); color: #fff; font-size: 10px; letter-spacing: 1.5px; padding: 6px 24px; white-space: nowrap; }.booking-type { font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: var(--red); margin-bottom: 12px; }
+.booking-card.featured::before { content: 'MOST POPULAR'; position: absolute; top: 16px; left: 50%; transform: translateX(-50%); background: var(--red); color: #fff; font-size: 10px; letter-spacing: 1.5px; padding: 6px 24px; white-space: nowrap; }
+.booking-type { font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: var(--red); margin-bottom: 12px; }
 .booking-card h3 { font-family: 'Bebas Neue', sans-serif; font-size: 36px; color: var(--black); letter-spacing: 1px; margin-bottom: 8px; }
 .booking-price { font-size: 32px; font-weight: 300; color: var(--black); margin-bottom: 6px; }
 .booking-price span { font-size: 16px; color: var(--mid-gray); }
@@ -159,8 +107,6 @@ section { padding: 96px 48px; }
 .btn-book:hover { background: var(--red); }
 .booking-card.featured .btn-book { background: var(--red); }
 .booking-card.featured .btn-book:hover { background: var(--red-dark); }
-
-/* CONTACT */
 #contact { background: var(--black); }
 #contact .section-title { color: #fff; }
 #contact .section-sub { color: var(--mid-gray); }
@@ -168,11 +114,7 @@ section { padding: 96px 48px; }
 .contact-form { display: flex; flex-direction: column; gap: 16px; }
 .form-group { display: flex; flex-direction: column; gap: 6px; }
 .form-group label { font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: var(--mid-gray); }
-.form-group input, .form-group textarea, .form-group select {
-  background: #1a1a1a; border: 1px solid #333; color: #fff;
-  padding: 14px 16px; font-family: 'DM Sans', sans-serif; font-size: 14px;
-  outline: none; transition: border-color 0.2s; width: 100%;
-}
+.form-group input, .form-group textarea, .form-group select { background: #1a1a1a; border: 1px solid #333; color: #fff; padding: 14px 16px; font-family: 'DM Sans', sans-serif; font-size: 14px; outline: none; transition: border-color 0.2s; width: 100%; }
 .form-group input:focus, .form-group textarea:focus, .form-group select:focus { border-color: var(--red); }
 .form-group textarea { height: 120px; resize: none; }
 .form-group select option { background: #1a1a1a; }
@@ -185,16 +127,12 @@ section { padding: 96px 48px; }
 .contact-detail-row { display: flex; flex-direction: column; gap: 3px; }
 .detail-label { font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: #555; }
 .detail-value { font-size: 15px; color: #ccc; }
-
-/* FOOTER */
 footer { background: #0a0a0a; border-top: 1px solid #1a1a1a; padding: 32px 48px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
 .footer-brand { font-family: 'Bebas Neue', sans-serif; font-size: 20px; letter-spacing: 2px; color: #fff; }
 .footer-copy { font-size: 12px; color: #555; }
 .footer-links { display: flex; gap: 24px; }
 .footer-links a { font-size: 12px; color: #555; text-decoration: none; transition: color 0.2s; }
 .footer-links a:hover { color: var(--red); }
-
-/* MOBILE */
 @media (max-width: 768px) {
   nav { padding: 16px 24px; }
   .nav-links { display: none; }
@@ -210,12 +148,10 @@ footer { background: #0a0a0a; border-top: 1px solid #1a1a1a; padding: 32px 48px;
 </style>
 </head>
 <body>
-
-<!-- NAV -->
 <nav>
   <a class="nav-logo" href="#">
-    <span class="logo-hand">🖐</span>
-    <span class="nav-brand">Primitive Media</span>
+    <img src="https://i.imgur.com/placeholder.png" alt="Primitive Media" style="height:40px; width:auto;" onerror="this.style.display='none'; this.nextSibling.style.display='block'"/>
+    <span style="font-family:'Bebas Neue',sans-serif; font-size:22px; letter-spacing:2px; color:#0D0D0D; display:none;">Primitive Media</span>
   </a>
   <ul class="nav-links">
     <li><a href="#services">Services</a></li>
@@ -226,8 +162,6 @@ footer { background: #0a0a0a; border-top: 1px solid #1a1a1a; padding: 32px 48px;
   </ul>
   <a class="nav-cta" href="#booking">Get started</a>
 </nav>
-
-<!-- HERO -->
 <section class="hero" id="home">
   <div class="hero-left">
     <p class="hero-eyebrow">Marketing for Loan Officers & Real Estate Agents</p>
@@ -241,22 +175,10 @@ footer { background: #0a0a0a; border-top: 1px solid #1a1a1a; padding: 32px 48px;
   <div class="hero-right">
     <p class="overline">By the numbers</p>
     <div class="stats-grid">
-      <div class="stat-box">
-        <div class="stat-num">300<span>+</span></div>
-        <div class="stat-label">Loan officers worked with</div>
-      </div>
-      <div class="stat-box">
-        <div class="stat-num">5M<span>+</span></div>
-        <div class="stat-label">Audience members reached</div>
-      </div>
-      <div class="stat-box">
-        <div class="stat-num">999<span>%</span></div>
-        <div class="stat-label">Audience reach growth in 12 weeks</div>
-      </div>
-      <div class="stat-box">
-        <div class="stat-num">2.2M<span>+</span></div>
-        <div class="stat-label">Views on a single campaign</div>
-      </div>
+      <div class="stat-box"><div class="stat-num">300<span>+</span></div><div class="stat-label">Loan officers worked with</div></div>
+      <div class="stat-box"><div class="stat-num">5M<span>+</span></div><div class="stat-label">Audience members reached</div></div>
+      <div class="stat-box"><div class="stat-num">999<span>%</span></div><div class="stat-label">Audience reach growth in 12 weeks</div></div>
+      <div class="stat-box"><div class="stat-num">2.2M<span>+</span></div><div class="stat-label">Views on a single campaign</div></div>
     </div>
     <div class="brand-logos">
       <p>Brands I've worked with</p>
@@ -269,8 +191,6 @@ footer { background: #0a0a0a; border-top: 1px solid #1a1a1a; padding: 32px 48px;
     </div>
   </div>
 </section>
-
-<!-- SERVICES -->
 <section id="services">
   <div class="section-header">
     <p class="overline">What I do</p>
@@ -278,103 +198,35 @@ footer { background: #0a0a0a; border-top: 1px solid #1a1a1a; padding: 32px 48px;
     <p class="section-sub">From your first logo to your next lead-generating campaign — I handle every layer so you can focus on closing deals.</p>
   </div>
   <div class="services-grid">
-    <div class="service-card">
-      <div class="service-num">01</div>
-      <h3>Brand Building</h3>
-      <p>Logo, identity, voice, and full strategy built from the ground up — or refined from what you already have.</p>
-      <span class="service-tag">Foundation</span>
-    </div>
-    <div class="service-card">
-      <div class="service-num">02</div>
-      <h3>Short-Form Video Content</h3>
-      <p>Scripted, directed, edited, and optimized for every platform. You film; I handle everything else.</p>
-      <span class="service-tag">Content</span>
-    </div>
-    <div class="service-card">
-      <div class="service-num">03</div>
-      <h3>Social Media Strategy</h3>
-      <p>Content calendars, platform strategy, and social listening — turning your platforms into lead intelligence tools.</p>
-      <span class="service-tag">Strategy</span>
-    </div>
-    <div class="service-card">
-      <div class="service-num">04</div>
-      <h3>Analytics Dashboards</h3>
-      <p>Custom dashboards that show you exactly what's working across all your platforms in one clean view.</p>
-      <span class="service-tag">Insights</span>
-    </div>
-    <div class="service-card">
-      <div class="service-num">05</div>
-      <h3>Meta Paid Advertising</h3>
-      <p>Facebook & Instagram ad strategy, setup, and ongoing management to generate real leads.</p>
-      <span class="service-tag">Paid Media</span>
-    </div>
-    <div class="service-card">
-      <div class="service-num">06</div>
-      <h3>Graphic Design</h3>
-      <p>Social graphics, listing assets, email visuals, branded templates, and photo editing.</p>
-      <span class="service-tag">Design</span>
-    </div>
-    <div class="service-card">
-      <div class="service-num">07</div>
-      <h3>Event Planning & Promotion</h3>
-      <p>Face-to-face networking strategy. I find where your target audience is and build a plan to get you in the room.</p>
-      <span class="service-tag">Networking</span>
-    </div>
-    <div class="service-card">
-      <div class="service-num">08</div>
-      <h3>AI Integration Training</h3>
-      <p>Integrate powerful AI tools to streamline not just your marketing — but your entire business workflow.</p>
-      <span class="service-tag">AI</span>
-    </div>
+    <div class="service-card"><div class="service-num">01</div><h3>Brand Building</h3><p>Logo, identity, voice, and full strategy built from the ground up — or refined from what you already have. Whether you are starting fresh or rebranding, I create a look and message that sets you apart in your market and attracts the right clients.</p><span class="service-tag">Foundation</span></div>
+    <div class="service-card"><div class="service-num">02</div><h3>Short-Form Video Content</h3><p>Scripted, directed, edited, and optimized for every platform. You film; I handle everything else. Every video comes with a full script, filming directions, reference examples, captions, text overlays, music, and platform-specific optimization.</p><span class="service-tag">Content</span></div>
+    <div class="service-card"><div class="service-num">03</div><h3>Social Media Strategy</h3><p>Content calendars, platform strategy, and social listening — turning your platforms into lead intelligence tools. I build a monthly content plan around what is already performing in your local market so you are never guessing what to post.</p><span class="service-tag">Strategy</span></div>
+    <div class="service-card"><div class="service-num">04</div><h3>Analytics Dashboards</h3><p>Custom dashboards that show you exactly what's working across all your platforms in one clean view. No more logging into five different apps — everything is consolidated so you can make smarter decisions faster.</p><span class="service-tag">Insights</span></div>
+    <div class="service-card"><div class="service-num">05</div><h3>Meta Paid Advertising</h3><p>Facebook & Instagram ad strategy, setup, and ongoing management to generate real leads. I handle targeting, creative, budgeting, and optimization — so your ad spend actually turns into pipeline, not wasted clicks.</p><span class="service-tag">Paid Media</span></div>
+    <div class="service-card"><div class="service-num">06</div><h3>Graphic Design</h3><p>Social graphics, listing assets, email visuals, branded templates, and photo editing. Every asset is built to match your brand identity and stop the scroll — from Instagram story templates to professional headshot retouching.</p><span class="service-tag">Design</span></div>
+    <div class="service-card"><div class="service-num">07</div><h3>Event Planning & Promotion</h3><p>Face-to-face networking strategy. I find where your target audience is and build a plan to get you in the room. From branded event materials to sponsorship opportunities, I help you show up memorably in your community.</p><span class="service-tag">Networking</span></div>
+    <div class="service-card"><div class="service-num">08</div><h3>AI Integration Training</h3><p>Integrate powerful AI tools to streamline not just your marketing — but your entire business workflow. I teach you and your team how to use AI to create content faster, respond to leads smarter, and run your business more efficiently.</p><span class="service-tag">AI</span></div>
   </div>
 </section>
-
-<!-- RESULTS -->
 <section id="results">
   <div class="section-header">
-    <p class="overline" style="color: var(--red);">Proven results</p>
+    <p class="overline" style="color:var(--red);">Proven results</p>
     <h2 class="section-title">Numbers that speak<br/>for themselves.</h2>
     <p class="section-sub">Real results from real campaigns across mortgage, real estate, and national brands.</p>
   </div>
   <div class="results-grid">
-    <div class="result-box">
-      <div class="result-num">1.8M<em>+</em></div>
-      <div class="result-label">Views on a single video</div>
-      <div class="result-brand">Lowe's Home Improvement</div>
-    </div>
-    <div class="result-box">
-      <div class="result-num">72K<em>+</em></div>
-      <div class="result-label">New followers in one campaign</div>
-      <div class="result-brand">Lowe's Home Improvement</div>
-    </div>
-    <div class="result-box">
-      <div class="result-num">999<em>%</em></div>
-      <div class="result-label">Audience reach growth in 12 weeks</div>
-      <div class="result-brand">CrossCountry Mortgage</div>
-    </div>
-    <div class="result-box">
-      <div class="result-num">317<em>%</em></div>
-      <div class="result-label">Instagram engagement increase</div>
-      <div class="result-brand">CrossCountry Mortgage</div>
-    </div>
-    <div class="result-box">
-      <div class="result-num">618<em>%</em></div>
-      <div class="result-label">LinkedIn impressions growth in 90 days</div>
-      <div class="result-brand">CrossCountry Mortgage</div>
-    </div>
-    <div class="result-box">
-      <div class="result-num">600<em>%</em></div>
-      <div class="result-label">Follower engagement growth</div>
-      <div class="result-brand">SRI Performance</div>
-    </div>
+    <div class="result-box"><div class="result-num">1.8M<em>+</em></div><div class="result-label">Views on a single video</div><div class="result-brand">Lowe's Home Improvement</div></div>
+    <div class="result-box"><div class="result-num">72K<em>+</em></div><div class="result-label">New followers in one campaign</div><div class="result-brand">Lowe's Home Improvement</div></div>
+    <div class="result-box"><div class="result-num">999<em>%</em></div><div class="result-label">Audience reach growth in 12 weeks</div><div class="result-brand">CrossCountry Mortgage</div></div>
+    <div class="result-box"><div class="result-num">317<em>%</em></div><div class="result-label">Instagram engagement increase</div><div class="result-brand">CrossCountry Mortgage</div></div>
+    <div class="result-box"><div class="result-num">618<em>%</em></div><div class="result-label">LinkedIn impressions growth in 90 days</div><div class="result-brand">CrossCountry Mortgage</div></div>
+    <div class="result-box"><div class="result-num">600<em>%</em></div><div class="result-label">Follower engagement growth</div><div class="result-brand">SRI Performance</div></div>
   </div>
   <div class="story-box">
     <blockquote>"I had a client who specialized in VA loans. After researching where veterans gathered in his town — pool halls, bowling alleys, community events — we created custom branded coasters, engraved beer mugs, and 40-caliber bottle openers with his contact info. We got him sponsoring veteran events in his community. He went from unknown to dominating the VA loan market in his area."</blockquote>
     <cite>— Anna-Marie Cline, Founder · Primitive Media</cite>
   </div>
 </section>
-
-<!-- PORTFOLIO -->
 <section id="portfolio">
   <div class="section-header">
     <p class="overline">Portfolio</p>
@@ -382,59 +234,15 @@ footer { background: #0a0a0a; border-top: 1px solid #1a1a1a; padding: 32px 48px;
     <p class="section-sub">A sample of campaigns, brand builds, and content across mortgage, real estate, and national brands. Full case studies available on request.</p>
   </div>
   <div class="portfolio-grid">
-    <div class="port-item">
-      <div class="port-bg">▶</div>
-      <div class="port-overlay">
-        <span class="port-tag">Video Campaign</span>
-        <h4>Lowe's Careers — "These Are My Things"</h4>
-        <p>1.8M views · 84K likes · TikTok & Instagram</p>
-      </div>
-    </div>
-    <div class="port-item">
-      <div class="port-bg">📈</div>
-      <div class="port-overlay">
-        <span class="port-tag">Growth Campaign</span>
-        <h4>CrossCountry Mortgage</h4>
-        <p>999% reach growth · 317% engagement increase · 12 weeks</p>
-      </div>
-    </div>
-    <div class="port-item">
-      <div class="port-bg">🎖</div>
-      <div class="port-overlay">
-        <span class="port-tag">Market Strategy</span>
-        <h4>VA Loan Officer — Local Domination</h4>
-        <p>Community sponsorships · Custom merch · Market penetration</p>
-      </div>
-    </div>
-    <div class="port-item">
-      <div class="port-bg">◼</div>
-      <div class="port-overlay">
-        <span class="port-tag">Brand Build</span>
-        <h4>Loan Officer Brand — From Scratch</h4>
-        <p>Logo · Identity · Voice · Full strategy</p>
-      </div>
-    </div>
-    <div class="port-item">
-      <div class="port-bg">📊</div>
-      <div class="port-overlay">
-        <span class="port-tag">Analytics</span>
-        <h4>Custom Analytics Dashboard</h4>
-        <p>Multi-platform reporting · Performance tracking · Insights</p>
-      </div>
-    </div>
-    <div class="port-item">
-      <div class="port-bg">🎯</div>
-      <div class="port-overlay">
-        <span class="port-tag">Paid Media</span>
-        <h4>Meta Ad Campaign — Lead Generation</h4>
-        <p>Facebook & Instagram · Audience targeting · Conversion</p>
-      </div>
-    </div>
+    <div class="port-item"><div class="port-bg">▶</div><div class="port-overlay"><span class="port-tag">Video Campaign</span><h4>Lowe's Careers — "These Are My Things"</h4><p>1.8M views · 84K likes · TikTok & Instagram</p></div></div>
+    <div class="port-item"><div class="port-bg">📈</div><div class="port-overlay"><span class="port-tag">Growth Campaign</span><h4>CrossCountry Mortgage</h4><p>999% reach growth · 317% engagement increase · 12 weeks</p></div></div>
+    <div class="port-item"><div class="port-bg">🎖</div><div class="port-overlay"><span class="port-tag">Market Strategy</span><h4>VA Loan Officer — Local Domination</h4><p>Community sponsorships · Custom merch · Market penetration</p></div></div>
+    <div class="port-item"><div class="port-bg">◼</div><div class="port-overlay"><span class="port-tag">Brand Build</span><h4>Loan Officer Brand — From Scratch</h4><p>Logo · Identity · Voice · Full strategy</p></div></div>
+    <div class="port-item"><div class="port-bg">📊</div><div class="port-overlay"><span class="port-tag">Analytics</span><h4>Custom Analytics Dashboard</h4><p>Multi-platform reporting · Performance tracking · Insights</p></div></div>
+    <div class="port-item"><div class="port-bg">🎯</div><div class="port-overlay"><span class="port-tag">Paid Media</span><h4>Meta Ad Campaign — Lead Generation</h4><p>Facebook & Instagram · Audience targeting · Conversion</p></div></div>
   </div>
   <p class="portfolio-note">* Full case studies and work samples available upon request during your strategy call.</p>
 </section>
-
-<!-- BOOKING -->
 <section id="booking">
   <div class="section-header">
     <p class="overline">Work with me</p>
@@ -470,71 +278,33 @@ footer { background: #0a0a0a; border-top: 1px solid #1a1a1a; padding: 32px 48px;
     </div>
   </div>
 </section>
-
-<!-- CONTACT -->
 <section id="contact">
   <div class="section-header">
-    <p class="overline" style="color: var(--red);">Get in touch</p>
+    <p class="overline" style="color:var(--red);">Get in touch</p>
     <h2 class="section-title">Ready to grow?</h2>
     <p class="section-sub">Send me a message and I'll get back to you within 24 hours.</p>
   </div>
   <div class="contact-grid">
     <form class="contact-form" onsubmit="handleSubmit(event)">
-      <div class="form-group">
-        <label>Your name</label>
-        <input type="text" placeholder="Anna-Marie Cline" required/>
-      </div>
-      <div class="form-group">
-        <label>Email address</label>
-        <input type="email" placeholder="you@company.com" required/>
-      </div>
-      <div class="form-group">
-        <label>Your role</label>
-        <select>
-          <option value="">Select your role</option>
-          <option>Loan Officer</option>
-          <option>Real Estate Agent</option>
-          <option>Mortgage Broker</option>
-          <option>Branch Manager</option>
-          <option>Other</option>
-        </select>
-      </div>
-      <div class="form-group">
-        <label>Tell me about your business</label>
-        <textarea placeholder="What are your current marketing challenges and goals?"></textarea>
-      </div>
+      <div class="form-group"><label>Your name</label><input type="text" placeholder="Your name" required/></div>
+      <div class="form-group"><label>Email address</label><input type="email" placeholder="you@company.com" required/></div>
+      <div class="form-group"><label>Your role</label><select><option value="">Select your role</option><option>Loan Officer</option><option>Real Estate Agent</option><option>Mortgage Broker</option><option>Branch Manager</option><option>Other</option></select></div>
+      <div class="form-group"><label>Tell me about your business</label><textarea placeholder="What are your current marketing challenges and goals?"></textarea></div>
       <button type="submit" class="btn-submit">Send message →</button>
     </form>
     <div class="contact-info">
       <h3>"You don't have to figure out marketing alone."</h3>
       <p>I work with loan officers and real estate agents at every stage — from building a brand from scratch to scaling an existing presence. Whether you need one video or a full marketing overhaul, I'm your one-stop shop.</p>
       <div class="contact-details">
-        <div class="contact-detail-row">
-          <span class="detail-label">Founder</span>
-          <span class="detail-value">Anna-Marie Cline</span>
-        </div>
-        <div class="contact-detail-row">
-          <span class="detail-label">Company</span>
-          <span class="detail-value">Primitive Media</span>
-        </div>
-        <div class="contact-detail-row">
-          <span class="detail-label">Phone</span>
-          <span class="detail-value">828-475-9536</span>
-        </div>
-        <div class="contact-detail-row">
-          <span class="detail-label">Email</span>
-          <span class="detail-value">Primitivemedia.co@gmail.com</span>
-        </div>
-        <div class="contact-detail-row">
-          <span class="detail-label">Location</span>
-          <span class="detail-value">Charlotte, NC</span>
-        </div>
+        <div class="contact-detail-row"><span class="detail-label">Founder</span><span class="detail-value">Anna-Marie Cline</span></div>
+        <div class="contact-detail-row"><span class="detail-label">Company</span><span class="detail-value">Primitive Media</span></div>
+        <div class="contact-detail-row"><span class="detail-label">Phone</span><span class="detail-value">828-475-9536</span></div>
+        <div class="contact-detail-row"><span class="detail-label">Email</span><span class="detail-value">primitivemedia.co@gmail.com</span></div>
+        <div class="contact-detail-row"><span class="detail-label">Location</span><span class="detail-value">Charlotte, NC</span></div>
       </div>
     </div>
   </div>
 </section>
-
-<!-- FOOTER -->
 <footer>
   <span class="footer-brand">Primitive Media</span>
   <span class="footer-copy">© 2025 Primitive Media · Anna-Marie Cline · Charlotte, NC</span>
@@ -545,12 +315,11 @@ footer { background: #0a0a0a; border-top: 1px solid #1a1a1a; padding: 32px 48px;
     <a href="#contact">Contact</a>
   </div>
 </footer>
-
 <script>
 function handleSubmit(e) {
   e.preventDefault();
   const btn = e.target.querySelector('.btn-submit');
-  btn.textContent = 'Message sent! I\'ll be in touch within 24 hours.';
+  btn.textContent = "Message sent! I'll be in touch within 24 hours.";
   btn.style.background = '#2a7a2a';
   e.target.reset();
 }
