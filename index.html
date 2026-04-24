@@ -6,26 +6,11 @@
 <title>Primitive Media | Marketing for Loan Officers & Real Estate Agents</title>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet"/>
 <style>
-:root {
-  --red: #E02020;
-  --red-dark: #B01818;
-  --black: #0D0D0D;
-  --off-white: #F7F4F0;
-  --warm-gray: #E8E4DF;
-  --mid-gray: #9A9590;
-  --text: #1A1A1A;
-}
+:root { --red: #E02020; --red-dark: #B01818; --black: #0D0D0D; --off-white: #F7F4F0; --warm-gray: #E8E4DF; --mid-gray: #9A9590; --text: #1A1A1A; }
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; }
 body { font-family: 'DM Sans', sans-serif; background: var(--off-white); color: var(--text); overflow-x: hidden; }
-nav {
-  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-  display: flex; align-items: center; justify-content: space-between;
-  padding: 18px 48px;
-  background: rgba(247,244,240,0.92);
-  backdrop-filter: blur(12px);
-  border-bottom: 1px solid var(--warm-gray);
-}
+nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 18px 48px; background: rgba(247,244,240,0.92); backdrop-filter: blur(12px); border-bottom: 1px solid var(--warm-gray); }
 .nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
 .nav-links { display: flex; gap: 32px; list-style: none; }
 .nav-links a { text-decoration: none; font-size: 13px; font-weight: 500; color: var(--mid-gray); letter-spacing: 0.5px; transition: color 0.2s; }
@@ -150,11 +135,11 @@ footer { background: #0a0a0a; border-top: 1px solid #1a1a1a; padding: 32px 48px;
 <body>
 <nav>
   <a class="nav-logo" href="#">
-    <img src="https://i.imgur.com/placeholder.png" alt="Primitive Media" style="height:40px; width:auto;" onerror="this.style.display='none'; this.nextSibling.style.display='block'"/>
-    <span style="font-family:'Bebas Neue',sans-serif; font-size:22px; letter-spacing:2px; color:#0D0D0D; display:none;">Primitive Media</span>
+    <span style="font-family:'Bebas Neue',sans-serif; font-size:22px; letter-spacing:2px; color:#0D0D0D;">Primitive Media</span>
   </a>
   <ul class="nav-links">
     <li><a href="#services">Services</a></li>
+    <li><a href="#how-it-works">How It Works</a></li>
     <li><a href="#results">Results</a></li>
     <li><a href="#portfolio">Portfolio</a></li>
     <li><a href="#booking">Book a call</a></li>
@@ -162,14 +147,15 @@ footer { background: #0a0a0a; border-top: 1px solid #1a1a1a; padding: 32px 48px;
   </ul>
   <a class="nav-cta" href="#booking">Get started</a>
 </nav>
+
 <section class="hero" id="home">
   <div class="hero-left">
     <p class="hero-eyebrow">Marketing for Loan Officers & Real Estate Agents</p>
-    <h1>Your brand.<br/>Your market.<br/><em>Dominated.</em></h1>
-    <p>You run your own business whether you think of it that way or not. Most loan officers feel like they're on an island trying to manage marketing on top of everything else. You don't have to figure it out alone.</p>
+    <h1>Turn your<br/>content into<br/><em>clients.</em></h1>
+    <p>Most loan officers are great at what they do — but marketing feels like a second job nobody hired you for. Primitive Media is a proven content system built specifically for loan officers and real estate agents. You plug in. The system runs. You close more deals.</p>
     <div class="hero-actions">
       <a class="btn-primary" href="https://calendly.com/primitivemedia-co/free-strategy-call" target="_blank">Book a free strategy call</a>
-      <a class="btn-outline" href="#services">See what I offer</a>
+      <a class="btn-outline" href="#how-it-works">See how it works</a>
     </div>
   </div>
   <div class="hero-right">
@@ -191,23 +177,62 @@ footer { background: #0a0a0a; border-top: 1px solid #1a1a1a; padding: 32px 48px;
     </div>
   </div>
 </section>
+
 <section id="services">
   <div class="section-header">
     <p class="overline">What I do</p>
-    <h2 class="section-title">A full marketing engine.<br/>One person.</h2>
-    <p class="section-sub">From your first logo to your next lead-generating campaign — I handle every layer so you can focus on closing deals.</p>
+    <h2 class="section-title">A full marketing engine.<br/>One proven system.</h2>
+    <p class="section-sub">You plug into a proven system that handles every layer of your marketing — so you can stay focused on what actually makes you money.</p>
   </div>
   <div class="services-grid">
-    <div class="service-card"><div class="service-num">01</div><h3>Brand Building</h3><p>Logo, identity, voice, and full strategy built from the ground up — or refined from what you already have. Whether you are starting fresh or rebranding, I create a look and message that sets you apart in your market and attracts the right clients.</p><span class="service-tag">Foundation</span></div>
-    <div class="service-card"><div class="service-num">02</div><h3>Short-Form Video Content</h3><p>Scripted, directed, edited, and optimized for every platform. You film; I handle everything else. Every video comes with a full script, filming directions, reference examples, captions, text overlays, music, and platform-specific optimization.</p><span class="service-tag">Content</span></div>
-    <div class="service-card"><div class="service-num">03</div><h3>Social Media Strategy</h3><p>Content calendars, platform strategy, and social listening — turning your platforms into lead intelligence tools. I build a monthly content plan around what is already performing in your local market so you are never guessing what to post.</p><span class="service-tag">Strategy</span></div>
-    <div class="service-card"><div class="service-num">04</div><h3>Analytics Dashboards</h3><p>Custom dashboards that show you exactly what's working across all your platforms in one clean view. No more logging into five different apps — everything is consolidated so you can make smarter decisions faster.</p><span class="service-tag">Insights</span></div>
-    <div class="service-card"><div class="service-num">05</div><h3>Meta Paid Advertising</h3><p>Facebook & Instagram ad strategy, setup, and ongoing management to generate real leads. I handle targeting, creative, budgeting, and optimization — so your ad spend actually turns into pipeline, not wasted clicks.</p><span class="service-tag">Paid Media</span></div>
-    <div class="service-card"><div class="service-num">06</div><h3>Graphic Design</h3><p>Social graphics, listing assets, email visuals, branded templates, and photo editing. Every asset is built to match your brand identity and stop the scroll — from Instagram story templates to professional headshot retouching.</p><span class="service-tag">Design</span></div>
-    <div class="service-card"><div class="service-num">07</div><h3>Event Planning & Promotion</h3><p>Face-to-face networking strategy. I find where your target audience is and build a plan to get you in the room. From branded event materials to sponsorship opportunities, I help you show up memorably in your community.</p><span class="service-tag">Networking</span></div>
-    <div class="service-card"><div class="service-num">08</div><h3>AI Integration Training</h3><p>Integrate powerful AI tools to streamline not just your marketing — but your entire business workflow. I teach you and your team how to use AI to create content faster, respond to leads smarter, and run your business more efficiently.</p><span class="service-tag">AI</span></div>
+    <div class="service-card"><div class="service-num">01</div><h3>Authority Brand System</h3><p>A complete brand identity system built to position you as the go-to expert in your market. Logo, voice, messaging, and visual strategy — engineered to attract high-intent clients and set you apart from every other LO or agent in your area.</p><span class="service-tag">Foundation</span></div>
+    <div class="service-card"><div class="service-num">02</div><h3>Content Creation Engine</h3><p>A fully managed video production system. You receive a script, filming directions, and reference examples — then film on your own time. The system handles editing, captions, optimization, and publishing. Consistent content without the chaos.</p><span class="service-tag">Content</span></div>
+    <div class="service-card"><div class="service-num">03</div><h3>Lead-Driven Content Strategy</h3><p>A monthly content strategy built around what is already performing in your specific local market. Content calendars, platform strategy, and social listening — turning your profiles from a place you post into a system that generates inbound leads.</p><span class="service-tag">Strategy</span></div>
+    <div class="service-card"><div class="service-num">04</div><h3>AI Growth Dashboard</h3><p>A custom performance dashboard that consolidates all your social platforms into one clear view. See what content is driving growth, what is falling flat, and exactly where to double down — without logging into five different apps.</p><span class="service-tag">Insights</span></div>
+    <div class="service-card"><div class="service-num">05</div><h3>Lead Generation Ads</h3><p>Paid ad campaigns on Facebook and Instagram engineered to generate real pipeline. The system handles targeting, creative, budgeting, and optimization — so every dollar you spend is working toward a closed deal, not wasted impressions.</p><span class="service-tag">Paid Media</span></div>
+    <div class="service-card"><div class="service-num">06</div><h3>Branded Content Assets</h3><p>On-brand visual assets that make your content look like a production team made it. Social graphics, listing assets, email visuals, story templates, and photo editing — all built to stop the scroll and reinforce your authority brand.</p><span class="service-tag">Design</span></div>
+    <div class="service-card"><div class="service-num">07</div><h3>In-Person Networking & Events</h3><p>Strategy and execution for in-person lead generation. For loan officers — finding where your ideal borrowers already gather and getting you in the room with branded materials and sponsorships. For real estate agents — open house promotion, event marketing, and community presence that turns foot traffic into clients.</p><span class="service-tag">Networking</span></div>
+    <div class="service-card"><div class="service-num">08</div><h3>AI Systems for Scaling</h3><p>Hands-on training for you and your team on using AI to scale your business. Create content faster, respond to leads smarter, automate repetitive tasks, and run a leaner operation — without hiring more people. Built for loan officers and agents who want to operate like a team of ten.</p><span class="service-tag">AI</span></div>
   </div>
 </section>
+
+<section id="how-it-works" style="background: var(--black); border-top: 1px solid #222;">
+  <div class="section-header">
+    <p class="overline" style="color: var(--red);">The System</p>
+    <h2 class="section-title" style="color: #fff;">How it works.</h2>
+    <p class="section-sub" style="color: var(--mid-gray);">You don't need to figure out marketing. You need to plug into a system that already works.</p>
+  </div>
+  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1px; background: #222; border: 1px solid #222;">
+    <div style="background: var(--black); padding: 48px 32px;">
+      <div style="font-family: 'Bebas Neue', sans-serif; font-size: 72px; color: #1a1a1a; line-height: 1; margin-bottom: 16px;">01</div>
+      <div style="width: 40px; height: 3px; background: var(--red); margin-bottom: 20px;"></div>
+      <h3 style="font-size: 18px; font-weight: 500; color: #fff; margin-bottom: 12px;">We plan your content</h3>
+      <p style="font-size: 14px; color: var(--mid-gray); line-height: 1.7;">We research what's already performing in your local market, build your content calendar, and write every script — so you never have to wonder what to post.</p>
+    </div>
+    <div style="background: var(--black); padding: 48px 32px;">
+      <div style="font-family: 'Bebas Neue', sans-serif; font-size: 72px; color: #1a1a1a; line-height: 1; margin-bottom: 16px;">02</div>
+      <div style="width: 40px; height: 3px; background: var(--red); margin-bottom: 20px;"></div>
+      <h3 style="font-size: 18px; font-weight: 500; color: #fff; margin-bottom: 12px;">You film (guided)</h3>
+      <p style="font-size: 14px; color: var(--mid-gray); line-height: 1.7;">You receive a complete filming guide — script, scene directions, and reference examples. Film on your own schedule in 30–60 minutes a month. No camera crew. No studio.</p>
+    </div>
+    <div style="background: var(--black); padding: 48px 32px;">
+      <div style="font-family: 'Bebas Neue', sans-serif; font-size: 72px; color: #1a1a1a; line-height: 1; margin-bottom: 16px;">03</div>
+      <div style="width: 40px; height: 3px; background: var(--red); margin-bottom: 20px;"></div>
+      <h3 style="font-size: 18px; font-weight: 500; color: #fff; margin-bottom: 12px;">We edit + optimize</h3>
+      <p style="font-size: 14px; color: var(--mid-gray); line-height: 1.7;">The system takes your raw footage and transforms it — editing, captions, graphics, music, and platform optimization handled end to end. You approve. We publish.</p>
+    </div>
+    <div style="background: #0f0f0f; padding: 48px 32px; border-left: 3px solid var(--red);">
+      <div style="font-family: 'Bebas Neue', sans-serif; font-size: 72px; color: #1a1a1a; line-height: 1; margin-bottom: 16px;">04</div>
+      <div style="width: 40px; height: 3px; background: var(--red); margin-bottom: 20px;"></div>
+      <h3 style="font-size: 18px; font-weight: 500; color: var(--red); margin-bottom: 12px;">You get leads</h3>
+      <p style="font-size: 14px; color: var(--mid-gray); line-height: 1.7;">Consistent, professional content builds your authority, grows your audience, and puts you in front of borrowers and buyers before they ever make a call. The system runs. You close.</p>
+    </div>
+  </div>
+  <div style="margin-top: 48px; text-align: center;">
+    <a class="btn-primary" href="https://calendly.com/primitivemedia-co/free-strategy-call" target="_blank" style="display: inline-block;">See how the system works for you →</a>
+  </div>
+</section>
+
 <section id="results">
   <div class="section-header">
     <p class="overline" style="color:var(--red);">Proven results</p>
@@ -219,7 +244,7 @@ footer { background: #0a0a0a; border-top: 1px solid #1a1a1a; padding: 32px 48px;
     <div class="result-box"><div class="result-num">72K<em>+</em></div><div class="result-label">New followers in one campaign</div><div class="result-brand">Lowe's Home Improvement</div></div>
     <div class="result-box"><div class="result-num">999<em>%</em></div><div class="result-label">Audience reach growth in 12 weeks</div><div class="result-brand">CrossCountry Mortgage</div></div>
     <div class="result-box"><div class="result-num">317<em>%</em></div><div class="result-label">Instagram engagement increase</div><div class="result-brand">CrossCountry Mortgage</div></div>
-    <div class="result-box"><div class="result-num">618<em>%</em></div><div class="result-label">LinkedIn impressions growth in 90 days</div><div class="result-brand">CrossCountry Mortgage</div></div>
+    <div class="result-box"><div class="result-num">618<em>+</em></div><div class="result-label">LinkedIn impressions growth in 90 days</div><div class="result-brand">CrossCountry Mortgage</div></div>
     <div class="result-box"><div class="result-num">600<em>%</em></div><div class="result-label">Follower engagement growth</div><div class="result-brand">SRI Performance</div></div>
   </div>
   <div class="story-box">
@@ -227,6 +252,7 @@ footer { background: #0a0a0a; border-top: 1px solid #1a1a1a; padding: 32px 48px;
     <cite>— Anna-Marie Cline, Founder · Primitive Media</cite>
   </div>
 </section>
+
 <section id="portfolio">
   <div class="section-header">
     <p class="overline">Portfolio</p>
@@ -238,11 +264,12 @@ footer { background: #0a0a0a; border-top: 1px solid #1a1a1a; padding: 32px 48px;
     <div class="port-item"><div class="port-bg">📈</div><div class="port-overlay"><span class="port-tag">Growth Campaign</span><h4>CrossCountry Mortgage</h4><p>999% reach growth · 317% engagement increase · 12 weeks</p></div></div>
     <div class="port-item"><div class="port-bg">🎖</div><div class="port-overlay"><span class="port-tag">Market Strategy</span><h4>VA Loan Officer — Local Domination</h4><p>Community sponsorships · Custom merch · Market penetration</p></div></div>
     <div class="port-item"><div class="port-bg">◼</div><div class="port-overlay"><span class="port-tag">Brand Build</span><h4>Loan Officer Brand — From Scratch</h4><p>Logo · Identity · Voice · Full strategy</p></div></div>
-    <div class="port-item"><div class="port-bg">📊</div><div class="port-overlay"><span class="port-tag">Analytics</span><h4>Custom Analytics Dashboard</h4><p>Multi-platform reporting · Performance tracking · Insights</p></div></div>
-    <div class="port-item"><div class="port-bg">🎯</div><div class="port-overlay"><span class="port-tag">Paid Media</span><h4>Meta Ad Campaign — Lead Generation</h4><p>Facebook & Instagram · Audience targeting · Conversion</p></div></div>
+    <div class="port-item"><div class="port-bg">📊</div><div class="port-overlay"><span class="port-tag">Analytics</span><h4>AI Growth Dashboard</h4><p>Multi-platform reporting · Performance tracking · Insights</p></div></div>
+    <div class="port-item"><div class="port-bg">🎯</div><div class="port-overlay"><span class="port-tag">Paid Media</span><h4>Lead Generation Ad Campaign</h4><p>Facebook & Instagram · Audience targeting · Conversion</p></div></div>
   </div>
   <p class="portfolio-note">* Full case studies and work samples available upon request during your strategy call.</p>
 </section>
+
 <section id="booking">
   <div class="section-header">
     <p class="overline">Work with me</p>
@@ -278,6 +305,7 @@ footer { background: #0a0a0a; border-top: 1px solid #1a1a1a; padding: 32px 48px;
     </div>
   </div>
 </section>
+
 <section id="contact">
   <div class="section-header">
     <p class="overline" style="color:var(--red);">Get in touch</p>
@@ -294,7 +322,7 @@ footer { background: #0a0a0a; border-top: 1px solid #1a1a1a; padding: 32px 48px;
     </form>
     <div class="contact-info">
       <h3>"You don't have to figure out marketing alone."</h3>
-      <p>I work with loan officers and real estate agents at every stage — from building a brand from scratch to scaling an existing presence. Whether you need one video or a full marketing overhaul, I'm your one-stop shop.</p>
+      <p>I work with loan officers and real estate agents at every stage — from building a brand from scratch to scaling an existing presence. Whether you need one video or a full marketing overhaul, you plug into a system built to get results.</p>
       <div class="contact-details">
         <div class="contact-detail-row"><span class="detail-label">Founder</span><span class="detail-value">Anna-Marie Cline</span></div>
         <div class="contact-detail-row"><span class="detail-label">Company</span><span class="detail-value">Primitive Media</span></div>
@@ -305,12 +333,14 @@ footer { background: #0a0a0a; border-top: 1px solid #1a1a1a; padding: 32px 48px;
     </div>
   </div>
 </section>
+
 <footer>
   <span class="footer-brand">Primitive Media</span>
   <span class="footer-copy">© 2025 Primitive Media · Anna-Marie Cline · Charlotte, NC</span>
   <div class="footer-links">
     <a href="#home">Home</a>
     <a href="#services">Services</a>
+    <a href="#how-it-works">How It Works</a>
     <a href="#booking">Book a call</a>
     <a href="#contact">Contact</a>
   </div>
