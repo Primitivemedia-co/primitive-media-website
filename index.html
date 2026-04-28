@@ -64,17 +64,9 @@ section { padding: 96px 48px; }
 .story-box { margin-top: 64px; border: 1px solid #333; padding: 48px; }
 .story-box blockquote { font-family: 'DM Serif Display', serif; font-size: clamp(18px, 2vw, 24px); color: #ccc; line-height: 1.6; font-style: italic; margin-bottom: 24px; }
 .story-box cite { font-size: 13px; color: var(--mid-gray); font-style: normal; letter-spacing: 1px; }
-#portfolio { background: #fff; border-top: 1px solid var(--warm-gray); }
-.portfolio-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--warm-gray); border: 1px solid var(--warm-gray); }
-.port-item { background: #fff; aspect-ratio: 4/3; position: relative; overflow: hidden; cursor: pointer; }
-.port-bg { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; font-family: 'Bebas Neue', sans-serif; font-size: 80px; color: var(--warm-gray); transition: transform 0.4s; }
-.port-item:hover .port-bg { transform: scale(1.1); }
-.port-overlay { position: absolute; inset: 0; background: var(--black); opacity: 0; transition: opacity 0.3s; display: flex; flex-direction: column; justify-content: flex-end; padding: 24px; }
-.port-item:hover .port-overlay { opacity: 0.92; }
-.port-overlay h4 { font-size: 16px; font-weight: 500; color: #fff; margin-bottom: 4px; }
-.port-overlay p { font-size: 12px; color: var(--mid-gray); }
-.port-overlay .port-tag { display: inline-block; background: var(--red); color: #fff; font-size: 10px; letter-spacing: 1px; text-transform: uppercase; padding: 3px 8px; margin-bottom: 10px; }
-.portfolio-note { margin-top: 32px; font-size: 14px; color: var(--mid-gray); font-style: italic; }
+.port-item:hover img { transform: scale(1.05); }
+.port-item img { transition: transform 0.4s; }
+.port-item:hover .port-overlay { opacity: 0.92 !important; }
 #booking { background: var(--off-white); border-top: 1px solid var(--warm-gray); }
 .booking-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
 .booking-card { border: 1.5px solid var(--warm-gray); background: #fff; padding: 48px 40px; position: relative; overflow: hidden; }
@@ -118,6 +110,7 @@ footer { background: #0a0a0a; border-top: 1px solid #1a1a1a; padding: 32px 48px;
 .footer-links { display: flex; gap: 24px; }
 .footer-links a { font-size: 12px; color: #555; text-decoration: none; transition: color 0.2s; }
 .footer-links a:hover { color: var(--red); }
+.portfolio-note { margin-top: 32px; font-size: 14px; color: var(--mid-gray); font-style: italic; }
 @media (max-width: 768px) {
   nav { padding: 16px 24px; }
   .nav-links { display: none; }
@@ -126,7 +119,6 @@ footer { background: #0a0a0a; border-top: 1px solid #1a1a1a; padding: 32px 48px;
   .hero-right { padding: 48px 24px; }
   section { padding: 64px 24px; }
   .booking-grid, .contact-grid { grid-template-columns: 1fr; }
-  .portfolio-grid { grid-template-columns: 1fr 1fr; }
   .stats-grid { grid-template-columns: 1fr 1fr; }
   footer { padding: 24px; flex-direction: column; align-items: flex-start; }
 }
@@ -142,6 +134,7 @@ footer { background: #0a0a0a; border-top: 1px solid #1a1a1a; padding: 32px 48px;
     <li><a href="#how-it-works">How It Works</a></li>
     <li><a href="#results">Results</a></li>
     <li><a href="#portfolio">Portfolio</a></li>
+    <li><a href="#pricing">Pricing</a></li>
     <li><a href="#booking">Book a call</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
@@ -191,8 +184,8 @@ footer { background: #0a0a0a; border-top: 1px solid #1a1a1a; padding: 32px 48px;
     <div class="service-card"><div class="service-num">04</div><h3>AI Growth Dashboard</h3><p>A custom performance dashboard that consolidates all your social platforms into one clear view. See what content is driving growth, what is falling flat, and exactly where to double down — without logging into five different apps.</p><span class="service-tag">Insights</span></div>
     <div class="service-card"><div class="service-num">05</div><h3>Lead Generation Ads</h3><p>Paid ad campaigns on Facebook and Instagram engineered to generate real pipeline. The system handles targeting, creative, budgeting, and optimization — so every dollar you spend is working toward a closed deal, not wasted impressions.</p><span class="service-tag">Paid Media</span></div>
     <div class="service-card"><div class="service-num">06</div><h3>Branded Content Assets</h3><p>On-brand visual assets that make your content look like a production team made it. Social graphics, listing assets, email visuals, story templates, and photo editing — all built to stop the scroll and reinforce your authority brand.</p><span class="service-tag">Design</span></div>
-    <div class="service-card"><div class="service-num">07</div><h3>In-Person Networking & Events</h3><p>Strategy and execution for in-person lead generation. For loan officers — finding where your ideal borrowers already gather and getting you in the room with branded materials and sponsorships. For real estate agents — open house promotion, event marketing, and community presence that turns foot traffic into clients.</p><span class="service-tag">Networking</span></div>
-    <div class="service-card"><div class="service-num">08</div><h3>AI Systems for Scaling</h3><p>Hands-on training for you and your team on using AI to scale your business. Create content faster, respond to leads smarter, automate repetitive tasks, and run a leaner operation — without hiring more people. Built for loan officers and agents who want to operate like a team of ten.</p><span class="service-tag">AI</span></div>
+    <div class="service-card"><div class="service-num">07</div><h3>In-Person Networking & Events</h3><p>Strategy and execution for in-person lead generation. For loan officers — finding where your ideal borrowers already gather and getting you in the room. For real estate agents — open house promotion, event marketing, and community presence that turns foot traffic into clients.</p><span class="service-tag">Networking</span></div>
+    <div class="service-card"><div class="service-num">08</div><h3>AI Systems for Scaling</h3><p>Hands-on training for you and your team on using AI to scale your business. Create content faster, respond to leads smarter, automate repetitive tasks, and run a leaner operation — without hiring more people.</p><span class="service-tag">AI</span></div>
   </div>
 </section>
 
@@ -244,7 +237,7 @@ footer { background: #0a0a0a; border-top: 1px solid #1a1a1a; padding: 32px 48px;
     <div class="result-box"><div class="result-num">72K<em>+</em></div><div class="result-label">New followers in one campaign</div><div class="result-brand">Lowe's Home Improvement</div></div>
     <div class="result-box"><div class="result-num">999<em>%</em></div><div class="result-label">Audience reach growth in 12 weeks</div><div class="result-brand">CrossCountry Mortgage</div></div>
     <div class="result-box"><div class="result-num">317<em>%</em></div><div class="result-label">Instagram engagement increase</div><div class="result-brand">CrossCountry Mortgage</div></div>
-    <div class="result-box"><div class="result-num">618<em>+</em></div><div class="result-label">LinkedIn impressions growth in 90 days</div><div class="result-brand">CrossCountry Mortgage</div></div>
+    <div class="result-box"><div class="result-num">618<em>%</em></div><div class="result-label">LinkedIn impressions growth in 90 days</div><div class="result-brand">CrossCountry Mortgage</div></div>
     <div class="result-box"><div class="result-num">600<em>%</em></div><div class="result-label">Follower engagement growth</div><div class="result-brand">SRI Performance</div></div>
   </div>
   <div class="story-box">
@@ -253,21 +246,151 @@ footer { background: #0a0a0a; border-top: 1px solid #1a1a1a; padding: 32px 48px;
   </div>
 </section>
 
-<section id="portfolio">
+<section id="portfolio" style="background: #fff; border-top: 1px solid var(--warm-gray);">
   <div class="section-header">
     <p class="overline">Portfolio</p>
     <h2 class="section-title">Recent work.</h2>
-    <p class="section-sub">A sample of campaigns, brand builds, and content across mortgage, real estate, and national brands. Full case studies available on request.</p>
+    <p class="section-sub">Real work for real clients — from social content and branded graphics to yard signs, email campaigns, and testimonial assets. Full case studies available on request.</p>
   </div>
-  <div class="portfolio-grid">
-    <div class="port-item"><div class="port-bg">▶</div><div class="port-overlay"><span class="port-tag">Video Campaign</span><h4>Lowe's Careers — "These Are My Things"</h4><p>1.8M views · 84K likes · TikTok & Instagram</p></div></div>
-    <div class="port-item"><div class="port-bg">📈</div><div class="port-overlay"><span class="port-tag">Growth Campaign</span><h4>CrossCountry Mortgage</h4><p>999% reach growth · 317% engagement increase · 12 weeks</p></div></div>
-    <div class="port-item"><div class="port-bg">🎖</div><div class="port-overlay"><span class="port-tag">Market Strategy</span><h4>VA Loan Officer — Local Domination</h4><p>Community sponsorships · Custom merch · Market penetration</p></div></div>
-    <div class="port-item"><div class="port-bg">◼</div><div class="port-overlay"><span class="port-tag">Brand Build</span><h4>Loan Officer Brand — From Scratch</h4><p>Logo · Identity · Voice · Full strategy</p></div></div>
-    <div class="port-item"><div class="port-bg">📊</div><div class="port-overlay"><span class="port-tag">Analytics</span><h4>AI Growth Dashboard</h4><p>Multi-platform reporting · Performance tracking · Insights</p></div></div>
-    <div class="port-item"><div class="port-bg">🎯</div><div class="port-overlay"><span class="port-tag">Paid Media</span><h4>Lead Generation Ad Campaign</h4><p>Facebook & Instagram · Audience targeting · Conversion</p></div></div>
+  <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--warm-gray); border: 1px solid var(--warm-gray); margin-bottom: 64px;">
+    <div class="port-item" style="aspect-ratio: 4/3; position: relative; overflow: hidden; cursor: pointer; background: #f0f0f0;">
+      <img src="https://drive.google.com/thumbnail?id=1dtmvBdtzqDwb45XKbDi51lrwRGXNhZGG&sz=w800" alt="CrossCountry Social Post" style="width:100%; height:100%; object-fit:cover;"/>
+      <div class="port-overlay" style="position:absolute; inset:0; background:var(--black); opacity:0; transition:opacity 0.3s; display:flex; flex-direction:column; justify-content:flex-end; padding:24px;">
+        <span style="display:inline-block; background:var(--red); color:#fff; font-size:10px; letter-spacing:1px; text-transform:uppercase; padding:3px 8px; margin-bottom:10px;">Branded Content</span>
+        <h4 style="font-size:16px; font-weight:500; color:#fff; margin-bottom:4px;">CrossCountry Mortgage — Social Post</h4>
+        <p style="font-size:12px; color:var(--mid-gray);">The Lubben Group · Branded content series</p>
+      </div>
+    </div>
+    <div class="port-item" style="aspect-ratio: 4/3; position: relative; overflow: hidden; cursor: pointer; background: #f0f0f0;">
+      <img src="https://drive.google.com/thumbnail?id=1cebOr88-DwzSvYOyynTRyUgF5iHOtfkn&sz=w800" alt="Back to School Banner" style="width:100%; height:100%; object-fit:cover;"/>
+      <div class="port-overlay" style="position:absolute; inset:0; background:var(--black); opacity:0; transition:opacity 0.3s; display:flex; flex-direction:column; justify-content:flex-end; padding:24px;">
+        <span style="display:inline-block; background:var(--red); color:#fff; font-size:10px; letter-spacing:1px; text-transform:uppercase; padding:3px 8px; margin-bottom:10px;">Event Sponsorship</span>
+        <h4 style="font-size:16px; font-weight:500; color:#fff; margin-bottom:4px;">Back to School Sponsored Banner</h4>
+        <p style="font-size:12px; color:var(--mid-gray);">Community event · Branded sponsorship asset</p>
+      </div>
+    </div>
+    <div class="port-item" style="aspect-ratio: 4/3; position: relative; overflow: hidden; cursor: pointer; background: #f0f0f0;">
+      <img src="https://drive.google.com/thumbnail?id=16vuWs5ABIjIKt6l4ZH0OMbn_IS8R1f9r&sz=w800" alt="Yard Sign" style="width:100%; height:100%; object-fit:cover;"/>
+      <div class="port-overlay" style="position:absolute; inset:0; background:var(--black); opacity:0; transition:opacity 0.3s; display:flex; flex-direction:column; justify-content:flex-end; padding:24px;">
+        <span style="display:inline-block; background:var(--red); color:#fff; font-size:10px; letter-spacing:1px; text-transform:uppercase; padding:3px 8px; margin-bottom:10px;">Print Design</span>
+        <h4 style="font-size:16px; font-weight:500; color:#fff; margin-bottom:4px;">Movement Mortgage — Yard Signs</h4>
+        <p style="font-size:12px; color:var(--mid-gray);">Heart to Home Team · Lauren & Andy Munsey</p>
+      </div>
+    </div>
+    <div class="port-item" style="aspect-ratio: 4/3; position: relative; overflow: hidden; cursor: pointer; background: #f0f0f0;">
+      <img src="https://drive.google.com/thumbnail?id=1C0Tullu-6_eFUIzBHdL7b2aN2sPyP3ph&sz=w800" alt="Yard Sign 2" style="width:100%; height:100%; object-fit:cover;"/>
+      <div class="port-overlay" style="position:absolute; inset:0; background:var(--black); opacity:0; transition:opacity 0.3s; display:flex; flex-direction:column; justify-content:flex-end; padding:24px;">
+        <span style="display:inline-block; background:var(--red); color:#fff; font-size:10px; letter-spacing:1px; text-transform:uppercase; padding:3px 8px; margin-bottom:10px;">Print Design</span>
+        <h4 style="font-size:16px; font-weight:500; color:#fff; margin-bottom:4px;">Movement Mortgage — Yard Signs</h4>
+        <p style="font-size:12px; color:var(--mid-gray);">Heart to Home Team · Open house series</p>
+      </div>
+    </div>
+    <div class="port-item" style="aspect-ratio: 4/3; position: relative; overflow: hidden; cursor: pointer; background: #f0f0f0;">
+      <img src="https://drive.google.com/thumbnail?id=1kbkxOCxKYvpJKVa8fpNX1D8LZiUFyALR&sz=w800" alt="Client Review" style="width:100%; height:100%; object-fit:cover;"/>
+      <div class="port-overlay" style="position:absolute; inset:0; background:var(--black); opacity:0; transition:opacity 0.3s; display:flex; flex-direction:column; justify-content:flex-end; padding:24px;">
+        <span style="display:inline-block; background:var(--red); color:#fff; font-size:10px; letter-spacing:1px; text-transform:uppercase; padding:3px 8px; margin-bottom:10px;">Social Asset</span>
+        <h4 style="font-size:16px; font-weight:500; color:#fff; margin-bottom:4px;">Client Review Graphic</h4>
+        <p style="font-size:12px; color:var(--mid-gray);">CrossCountry Mortgage · Branded testimonial post</p>
+      </div>
+    </div>
+    <div class="port-item" style="aspect-ratio: 4/3; position: relative; overflow: hidden; cursor: pointer; background: #f0f0f0;">
+      <img src="https://drive.google.com/thumbnail?id=1HHFQuQOBhvoJLOoea_VXzfmxpnSIlmOb&sz=w800" alt="Client Testimonial" style="width:100%; height:100%; object-fit:cover;"/>
+      <div class="port-overlay" style="position:absolute; inset:0; background:var(--black); opacity:0; transition:opacity 0.3s; display:flex; flex-direction:column; justify-content:flex-end; padding:24px;">
+        <span style="display:inline-block; background:var(--red); color:#fff; font-size:10px; letter-spacing:1px; text-transform:uppercase; padding:3px 8px; margin-bottom:10px;">Social Asset</span>
+        <h4 style="font-size:16px; font-weight:500; color:#fff; margin-bottom:4px;">Client Testimonial Graphic</h4>
+        <p style="font-size:12px; color:var(--mid-gray);">CrossCountry Mortgage · The Lubben Group</p>
+      </div>
+    </div>
+  </div>
+  <p class="overline" style="margin-bottom: 16px;">Email Marketing — Automated Header Series</p>
+  <div style="display: grid; grid-template-columns: repeat(6, 1fr); gap: 8px; margin-bottom: 32px;">
+    <img src="https://drive.google.com/thumbnail?id=12AtJ03H9Hf0yicfvPIJr2URcWoJTd1UV&sz=w400" style="width:100%; aspect-ratio:16/9; object-fit:cover; border: 1px solid var(--warm-gray);" alt="Email Header 1"/>
+    <img src="https://drive.google.com/thumbnail?id=1CozZh3urJz3fAiwZI4XvgsRtmYQYQkCI&sz=w400" style="width:100%; aspect-ratio:16/9; object-fit:cover; border: 1px solid var(--warm-gray);" alt="Email Header 2"/>
+    <img src="https://drive.google.com/thumbnail?id=1-mM0t6L44zV9cS6FLrYWGBnW-LgWTf9n&sz=w400" style="width:100%; aspect-ratio:16/9; object-fit:cover; border: 1px solid var(--warm-gray);" alt="Email Header 3"/>
+    <img src="https://drive.google.com/thumbnail?id=1oIt1HpFdBR_ufAzsVJB4T1XPC0fMmoPY&sz=w400" style="width:100%; aspect-ratio:16/9; object-fit:cover; border: 1px solid var(--warm-gray);" alt="Email Header 4"/>
+    <img src="https://drive.google.com/thumbnail?id=1A57cmIfYAz9kMrR86h2U98qpZY7W_omI&sz=w400" style="width:100%; aspect-ratio:16/9; object-fit:cover; border: 1px solid var(--warm-gray);" alt="Email Header 5"/>
+    <img src="https://drive.google.com/thumbnail?id=1s98j7e4wl7xTWsXxE6prqI8mzKDRzk4r&sz=w400" style="width:100%; aspect-ratio:16/9; object-fit:cover; border: 1px solid var(--warm-gray);" alt="Email Header 6"/>
   </div>
   <p class="portfolio-note">* Full case studies and work samples available upon request during your strategy call.</p>
+</section>
+
+<section id="pricing" style="background: var(--off-white); border-top: 1px solid var(--warm-gray);">
+  <div class="section-header">
+    <p class="overline">Packages</p>
+    <h2 class="section-title">Simple, transparent pricing.</h2>
+    <p class="section-sub">Choose the package that fits where you are right now. Every package includes scripts, captions, editing, and scheduling — you just film.</p>
+  </div>
+  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1px; background: var(--warm-gray); border: 1px solid var(--warm-gray); margin-bottom: 48px;">
+    <div style="background: #fff; padding: 40px 28px;">
+      <p style="font-size:11px; letter-spacing:2px; text-transform:uppercase; color:var(--mid-gray); margin-bottom:12px;">Starter</p>
+      <div style="font-family:'Bebas Neue',sans-serif; font-size:48px; color:var(--black); line-height:1;">$497<span style="font-size:18px; font-family:'DM Sans',sans-serif; color:var(--mid-gray); font-weight:300;">/mo</span></div>
+      <p style="font-size:13px; color:var(--mid-gray); margin: 8px 0 24px;">4 videos per month</p>
+      <div style="width:32px; height:2px; background:var(--warm-gray); margin-bottom:24px;"></div>
+      <ul style="list-style:none; display:flex; flex-direction:column; gap:10px; margin-bottom:32px;">
+        <li style="font-size:13px; color:#555;">→ Scripts + captions</li>
+        <li style="font-size:13px; color:#555;">→ Basic editing</li>
+        <li style="font-size:13px; color:#555;">→ Content calendar</li>
+        <li style="font-size:13px; color:#555;">→ Hashtag strategy</li>
+        <li style="font-size:13px; color:#555;">→ Scheduling</li>
+      </ul>
+      <a href="https://calendly.com/primitivemedia-co/free-strategy-call" target="_blank" style="display:block; text-align:center; background:var(--black); color:#fff; padding:12px; font-size:13px; font-weight:500; text-decoration:none; letter-spacing:0.5px;">Get started →</a>
+    </div>
+    <div style="background: #fff; padding: 40px 28px;">
+      <p style="font-size:11px; letter-spacing:2px; text-transform:uppercase; color:var(--mid-gray); margin-bottom:12px;">Growth</p>
+      <div style="font-family:'Bebas Neue',sans-serif; font-size:48px; color:var(--black); line-height:1;">$997<span style="font-size:18px; font-family:'DM Sans',sans-serif; color:var(--mid-gray); font-weight:300;">/mo</span></div>
+      <p style="font-size:13px; color:var(--mid-gray); margin: 8px 0 24px;">8 videos per month</p>
+      <div style="width:32px; height:2px; background:var(--warm-gray); margin-bottom:24px;"></div>
+      <ul style="list-style:none; display:flex; flex-direction:column; gap:10px; margin-bottom:32px;">
+        <li style="font-size:13px; color:#555;">→ Scripts + captions</li>
+        <li style="font-size:13px; color:#555;">→ Advanced editing</li>
+        <li style="font-size:13px; color:#555;">→ Content calendar</li>
+        <li style="font-size:13px; color:#555;">→ Hashtag strategy</li>
+        <li style="font-size:13px; color:#555;">→ Scheduling</li>
+        <li style="font-size:13px; color:#555;">→ 1 graphic set</li>
+      </ul>
+      <a href="https://calendly.com/primitivemedia-co/free-strategy-call" target="_blank" style="display:block; text-align:center; background:var(--black); color:#fff; padding:12px; font-size:13px; font-weight:500; text-decoration:none; letter-spacing:0.5px;">Get started →</a>
+    </div>
+    <div style="background: var(--black); padding: 40px 28px;">
+      <p style="font-size:11px; letter-spacing:2px; text-transform:uppercase; color:var(--red); margin-bottom:12px;">Pro · Most Popular</p>
+      <div style="font-family:'Bebas Neue',sans-serif; font-size:48px; color:#fff; line-height:1;">$1,597<span style="font-size:18px; font-family:'DM Sans',sans-serif; color:var(--mid-gray); font-weight:300;">/mo</span></div>
+      <p style="font-size:13px; color:var(--mid-gray); margin: 8px 0 24px;">12 videos per month</p>
+      <div style="width:32px; height:2px; background:var(--red); margin-bottom:24px;"></div>
+      <ul style="list-style:none; display:flex; flex-direction:column; gap:10px; margin-bottom:32px;">
+        <li style="font-size:13px; color:#aaa;">→ Scripts + captions</li>
+        <li style="font-size:13px; color:#aaa;">→ Full editing + B-roll</li>
+        <li style="font-size:13px; color:#aaa;">→ Content calendar</li>
+        <li style="font-size:13px; color:#aaa;">→ Hashtag strategy</li>
+        <li style="font-size:13px; color:#aaa;">→ Scheduling</li>
+        <li style="font-size:13px; color:#aaa;">→ 2 graphic sets</li>
+      </ul>
+      <a href="https://calendly.com/primitivemedia-co/free-strategy-call" target="_blank" style="display:block; text-align:center; background:var(--red); color:#fff; padding:12px; font-size:13px; font-weight:500; text-decoration:none; letter-spacing:0.5px;">Get started →</a>
+    </div>
+    <div style="background: #fff; padding: 40px 28px;">
+      <p style="font-size:11px; letter-spacing:2px; text-transform:uppercase; color:var(--mid-gray); margin-bottom:12px;">Elite</p>
+      <div style="font-family:'Bebas Neue',sans-serif; font-size:48px; color:var(--black); line-height:1;">$2,497<span style="font-size:18px; font-family:'DM Sans',sans-serif; color:var(--mid-gray); font-weight:300;">/mo</span></div>
+      <p style="font-size:13px; color:var(--mid-gray); margin: 8px 0 24px;">16 videos per month</p>
+      <div style="width:32px; height:2px; background:var(--warm-gray); margin-bottom:24px;"></div>
+      <ul style="list-style:none; display:flex; flex-direction:column; gap:10px; margin-bottom:32px;">
+        <li style="font-size:13px; color:#555;">→ Scripts + captions</li>
+        <li style="font-size:13px; color:#555;">→ Premium editing + B-roll</li>
+        <li style="font-size:13px; color:#555;">→ Content calendar</li>
+        <li style="font-size:13px; color:#555;">→ Hashtag strategy</li>
+        <li style="font-size:13px; color:#555;">→ Scheduling</li>
+        <li style="font-size:13px; color:#555;">→ 4 graphic sets</li>
+      </ul>
+      <a href="https://calendly.com/primitivemedia-co/free-strategy-call" target="_blank" style="display:block; text-align:center; background:var(--black); color:#fff; padding:12px; font-size:13px; font-weight:500; text-decoration:none; letter-spacing:0.5px;">Get started →</a>
+    </div>
+  </div>
+  <p class="overline" style="margin-bottom:24px;">Add-On Services</p>
+  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1px; background: var(--warm-gray); border: 1px solid var(--warm-gray);">
+    <div style="background:#fff; padding:24px 28px;"><h4 style="font-size:14px; font-weight:500; color:var(--black); margin-bottom:6px;">AI Growth Dashboard</h4><p style="font-size:13px; color:var(--mid-gray);">$297 setup · $97/mo</p></div>
+    <div style="background:#fff; padding:24px 28px;"><h4 style="font-size:14px; font-weight:500; color:var(--black); margin-bottom:6px;">Meta Paid Ads Management</h4><p style="font-size:13px; color:var(--mid-gray);">$500 setup · $497/mo + ad spend</p></div>
+    <div style="background:#fff; padding:24px 28px;"><h4 style="font-size:14px; font-weight:500; color:var(--black); margin-bottom:6px;">Extra Video (beyond package)</h4><p style="font-size:13px; color:var(--mid-gray);">$75/video</p></div>
+    <div style="background:#fff; padding:24px 28px;"><h4 style="font-size:14px; font-weight:500; color:var(--black); margin-bottom:6px;">Branded Graphic Design Pack</h4><p style="font-size:13px; color:var(--mid-gray);">$150–$300 one-time · $97/mo</p></div>
+    <div style="background:#fff; padding:24px 28px;"><h4 style="font-size:14px; font-weight:500; color:var(--black); margin-bottom:6px;">Photo Editing (per batch)</h4><p style="font-size:13px; color:var(--mid-gray);">$50–$150</p></div>
+    <div style="background:#fff; padding:24px 28px;"><h4 style="font-size:14px; font-weight:500; color:var(--black); margin-bottom:6px;">Remote Filming Direction Session</h4><p style="font-size:13px; color:var(--mid-gray);">$97/session</p></div>
+  </div>
+  <p style="font-size:13px; color:var(--mid-gray); margin-top:16px; font-style:italic;">Annual contracts receive 10% off. All packages include content calendar, scripts, captions, hashtag strategy, and scheduling.</p>
 </section>
 
 <section id="booking">
@@ -340,7 +463,7 @@ footer { background: #0a0a0a; border-top: 1px solid #1a1a1a; padding: 32px 48px;
   <div class="footer-links">
     <a href="#home">Home</a>
     <a href="#services">Services</a>
-    <a href="#how-it-works">How It Works</a>
+    <a href="#pricing">Pricing</a>
     <a href="#booking">Book a call</a>
     <a href="#contact">Contact</a>
   </div>
