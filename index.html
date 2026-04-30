@@ -10,9 +10,9 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; }
 body { font-family: 'DM Sans', sans-serif; background: var(--off-white); color: var(--text); overflow-x: hidden; }
-nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 18px 48px; background: rgba(247,244,240,0.92); backdrop-filter: blur(12px); border-bottom: 1px solid var(--warm-gray); }
+nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 18px 48px; background: rgba(247,244,240,0.95); backdrop-filter: blur(12px); border-bottom: 1px solid var(--warm-gray); }
 .nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
-.nav-links { display: flex; gap: 32px; list-style: none; }
+.nav-links { display: flex; gap: 24px; list-style: none; }
 .nav-links a { text-decoration: none; font-size: 13px; font-weight: 500; color: var(--mid-gray); letter-spacing: 0.5px; transition: color 0.2s; }
 .nav-links a:hover { color: var(--red); }
 .nav-cta { background: var(--red); color: #fff; border: none; padding: 10px 24px; font-family: 'DM Sans', sans-serif; font-size: 13px; font-weight: 500; cursor: pointer; letter-spacing: 0.5px; transition: background 0.2s; text-decoration: none; }
@@ -35,16 +35,14 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; a
 .stat-num { font-family: 'Bebas Neue', sans-serif; font-size: 52px; color: #fff; line-height: 1; }
 .stat-num span { color: var(--red); }
 .stat-label { font-size: 12px; color: var(--mid-gray); margin-top: 6px; line-height: 1.5; }
-.brand-logos { display: flex; flex-direction: column; gap: 8px; }
 .brand-logos p { font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: #555; margin-bottom: 8px; }
 .brands { display: flex; flex-wrap: wrap; gap: 8px; }
 .brand-pill { background: #1a1a1a; border: 1px solid #333; padding: 6px 14px; font-size: 12px; color: #aaa; letter-spacing: 0.5px; }
 section { padding: 96px 48px; }
 .section-header { margin-bottom: 56px; }
-.overline { font-size: 11px; font-weight: 500; letter-spacing: 3px; text-transform: uppercase; color: var(--red); margin-bottom: 12px; }
+.overline { font-size: 11px; font-weight: 500; letter-spacing: 3px; text-transform: uppercase; color: var(--red); margin-bottom: 12px; display: block; }
 .section-title { font-family: 'Bebas Neue', sans-serif; font-size: clamp(40px, 5vw, 64px); color: var(--black); line-height: 1; letter-spacing: 1px; }
 .section-sub { font-size: 16px; color: #666; line-height: 1.8; max-width: 520px; margin-top: 16px; font-weight: 300; }
-#services { background: var(--off-white); border-top: 1px solid var(--warm-gray); }
 .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1px; background: var(--warm-gray); border: 1px solid var(--warm-gray); }
 .service-card { background: var(--off-white); padding: 36px 32px; transition: background 0.2s; }
 .service-card:hover { background: #fff; }
@@ -52,9 +50,6 @@ section { padding: 96px 48px; }
 .service-card h3 { font-size: 16px; font-weight: 500; color: var(--black); margin-bottom: 10px; }
 .service-card p { font-size: 14px; color: #777; line-height: 1.7; font-weight: 300; }
 .service-tag { display: inline-block; background: var(--red); color: #fff; font-size: 10px; letter-spacing: 1px; text-transform: uppercase; padding: 3px 8px; margin-top: 14px; }
-#results { background: var(--black); color: #fff; }
-#results .section-title { color: #fff; }
-#results .section-sub { color: var(--mid-gray); }
 .results-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1px; background: #222; border: 1px solid #222; }
 .result-box { background: var(--black); padding: 40px 32px; }
 .result-num { font-family: 'Bebas Neue', sans-serif; font-size: 56px; color: #fff; line-height: 1; }
@@ -64,10 +59,15 @@ section { padding: 96px 48px; }
 .story-box { margin-top: 64px; border: 1px solid #333; padding: 48px; }
 .story-box blockquote { font-family: 'DM Serif Display', serif; font-size: clamp(18px, 2vw, 24px); color: #ccc; line-height: 1.6; font-style: italic; margin-bottom: 24px; }
 .story-box cite { font-size: 13px; color: var(--mid-gray); font-style: normal; letter-spacing: 1px; }
+.port-item { position: relative; overflow: hidden; cursor: pointer; background: #f0f0f0; display: block; text-decoration: none; aspect-ratio: 4/3; }
+.port-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s; }
 .port-item:hover img { transform: scale(1.05); }
-.port-item img { transition: transform 0.4s; }
-.port-item:hover .port-overlay { opacity: 0.92 !important; }
-#booking { background: var(--off-white); border-top: 1px solid var(--warm-gray); }
+.port-overlay { position: absolute; inset: 0; background: var(--black); opacity: 0; transition: opacity 0.3s; display: flex; flex-direction: column; justify-content: flex-end; padding: 24px; }
+.port-item:hover .port-overlay { opacity: 0.92; }
+.port-tag { display: inline-block; background: var(--red); color: #fff; font-size: 10px; letter-spacing: 1px; text-transform: uppercase; padding: 3px 8px; margin-bottom: 10px; }
+.port-overlay h4 { font-size: 16px; font-weight: 500; color: #fff; margin-bottom: 4px; }
+.port-overlay p { font-size: 12px; color: var(--mid-gray); }
+.port-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--warm-gray); border: 1px solid var(--warm-gray); margin-bottom: 48px; }
 .booking-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
 .booking-card { border: 1.5px solid var(--warm-gray); background: #fff; padding: 48px 40px; position: relative; overflow: hidden; }
 .booking-card.featured { border-color: var(--red); }
@@ -84,9 +84,6 @@ section { padding: 96px 48px; }
 .btn-book:hover { background: var(--red); }
 .booking-card.featured .btn-book { background: var(--red); }
 .booking-card.featured .btn-book:hover { background: var(--red-dark); }
-#contact { background: var(--black); }
-#contact .section-title { color: #fff; }
-#contact .section-sub { color: var(--mid-gray); }
 .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start; }
 .contact-form { display: flex; flex-direction: column; gap: 16px; }
 .form-group { display: flex; flex-direction: column; gap: 6px; }
@@ -97,7 +94,6 @@ section { padding: 96px 48px; }
 .form-group select option { background: #1a1a1a; }
 .btn-submit { background: var(--red); color: #fff; border: none; padding: 16px; font-family: 'DM Sans', sans-serif; font-size: 14px; font-weight: 500; cursor: pointer; letter-spacing: 0.5px; transition: background 0.2s; width: 100%; }
 .btn-submit:hover { background: var(--red-dark); }
-.contact-info { padding-top: 8px; }
 .contact-info h3 { font-family: 'DM Serif Display', serif; font-size: 28px; color: #fff; margin-bottom: 16px; line-height: 1.4; font-style: italic; }
 .contact-info p { font-size: 15px; color: var(--mid-gray); line-height: 1.8; margin-bottom: 40px; font-weight: 300; }
 .contact-details { display: flex; flex-direction: column; gap: 16px; }
@@ -110,7 +106,6 @@ footer { background: #0a0a0a; border-top: 1px solid #1a1a1a; padding: 32px 48px;
 .footer-links { display: flex; gap: 24px; }
 .footer-links a { font-size: 12px; color: #555; text-decoration: none; transition: color 0.2s; }
 .footer-links a:hover { color: var(--red); }
-.portfolio-note { margin-top: 32px; font-size: 14px; color: var(--mid-gray); font-style: italic; }
 @media (max-width: 768px) {
   nav { padding: 16px 24px; }
   .nav-links { display: none; }
@@ -119,12 +114,15 @@ footer { background: #0a0a0a; border-top: 1px solid #1a1a1a; padding: 32px 48px;
   .hero-right { padding: 48px 24px; }
   section { padding: 64px 24px; }
   .booking-grid, .contact-grid { grid-template-columns: 1fr; }
+  .port-grid { grid-template-columns: 1fr 1fr; }
   .stats-grid { grid-template-columns: 1fr 1fr; }
   footer { padding: 24px; flex-direction: column; align-items: flex-start; }
 }
 </style>
 </head>
 <body>
+
+<!-- NAV -->
 <nav>
   <a class="nav-logo" href="#">
     <span style="font-family:'Bebas Neue',sans-serif; font-size:22px; letter-spacing:2px; color:#0D0D0D;">Primitive Media</span>
@@ -141,6 +139,7 @@ footer { background: #0a0a0a; border-top: 1px solid #1a1a1a; padding: 32px 48px;
   <a class="nav-cta" href="#booking">Get started</a>
 </nav>
 
+<!-- HERO -->
 <section class="hero" id="home">
   <div class="hero-left">
     <p class="hero-eyebrow">Marketing for Loan Officers & Real Estate Agents</p>
@@ -152,7 +151,7 @@ footer { background: #0a0a0a; border-top: 1px solid #1a1a1a; padding: 32px 48px;
     </div>
   </div>
   <div class="hero-right">
-    <p class="overline">By the numbers</p>
+    <p class="overline" style="color:var(--mid-gray);">By the numbers</p>
     <div class="stats-grid">
       <div class="stat-box"><div class="stat-num">300<span>+</span></div><div class="stat-label">Loan officers worked with</div></div>
       <div class="stat-box"><div class="stat-num">5M<span>+</span></div><div class="stat-label">Audience members reached</div></div>
@@ -171,9 +170,10 @@ footer { background: #0a0a0a; border-top: 1px solid #1a1a1a; padding: 32px 48px;
   </div>
 </section>
 
-<section id="services">
+<!-- SERVICES -->
+<section id="services" style="background: var(--off-white); border-top: 1px solid var(--warm-gray);">
   <div class="section-header">
-    <p class="overline">What I do</p>
+    <span class="overline">What I do</span>
     <h2 class="section-title">A full marketing engine.<br/>One proven system.</h2>
     <p class="section-sub">You plug into a proven system that handles every layer of your marketing — so you can stay focused on what actually makes you money.</p>
   </div>
@@ -189,48 +189,50 @@ footer { background: #0a0a0a; border-top: 1px solid #1a1a1a; padding: 32px 48px;
   </div>
 </section>
 
+<!-- HOW IT WORKS -->
 <section id="how-it-works" style="background: var(--black); border-top: 1px solid #222;">
   <div class="section-header">
-    <p class="overline" style="color: var(--red);">The System</p>
-    <h2 class="section-title" style="color: #fff;">How it works.</h2>
-    <p class="section-sub" style="color: var(--mid-gray);">You don't need to figure out marketing. You need to plug into a system that already works.</p>
+    <span class="overline" style="color:var(--red);">The System</span>
+    <h2 class="section-title" style="color:#fff;">How it works.</h2>
+    <p class="section-sub" style="color:var(--mid-gray);">You don't need to figure out marketing. You need to plug into a system that already works.</p>
   </div>
-  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1px; background: #222; border: 1px solid #222;">
-    <div style="background: var(--black); padding: 48px 32px;">
-      <div style="font-family: 'Bebas Neue', sans-serif; font-size: 72px; color: #1a1a1a; line-height: 1; margin-bottom: 16px;">01</div>
-      <div style="width: 40px; height: 3px; background: var(--red); margin-bottom: 20px;"></div>
-      <h3 style="font-size: 18px; font-weight: 500; color: #fff; margin-bottom: 12px;">We plan your content</h3>
-      <p style="font-size: 14px; color: var(--mid-gray); line-height: 1.7;">We research what's already performing in your local market, build your content calendar, and write every script — so you never have to wonder what to post.</p>
+  <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(220px,1fr)); gap:1px; background:#222; border:1px solid #222;">
+    <div style="background:var(--black); padding:48px 32px;">
+      <div style="font-family:'Bebas Neue',sans-serif; font-size:72px; color:#1a1a1a; line-height:1; margin-bottom:16px;">01</div>
+      <div style="width:40px; height:3px; background:var(--red); margin-bottom:20px;"></div>
+      <h3 style="font-size:18px; font-weight:500; color:#fff; margin-bottom:12px;">We plan your content</h3>
+      <p style="font-size:14px; color:var(--mid-gray); line-height:1.7;">We research what's already performing in your local market, build your content calendar, and write every script — so you never have to wonder what to post.</p>
     </div>
-    <div style="background: var(--black); padding: 48px 32px;">
-      <div style="font-family: 'Bebas Neue', sans-serif; font-size: 72px; color: #1a1a1a; line-height: 1; margin-bottom: 16px;">02</div>
-      <div style="width: 40px; height: 3px; background: var(--red); margin-bottom: 20px;"></div>
-      <h3 style="font-size: 18px; font-weight: 500; color: #fff; margin-bottom: 12px;">You film (guided)</h3>
-      <p style="font-size: 14px; color: var(--mid-gray); line-height: 1.7;">You receive a complete filming guide — script, scene directions, and reference examples. Film on your own schedule in 30–60 minutes a month. No camera crew. No studio.</p>
+    <div style="background:var(--black); padding:48px 32px;">
+      <div style="font-family:'Bebas Neue',sans-serif; font-size:72px; color:#1a1a1a; line-height:1; margin-bottom:16px;">02</div>
+      <div style="width:40px; height:3px; background:var(--red); margin-bottom:20px;"></div>
+      <h3 style="font-size:18px; font-weight:500; color:#fff; margin-bottom:12px;">You film (guided)</h3>
+      <p style="font-size:14px; color:var(--mid-gray); line-height:1.7;">You receive a complete filming guide — script, scene directions, and reference examples. Film on your own schedule in 30–60 minutes a month. No camera crew. No studio.</p>
     </div>
-    <div style="background: var(--black); padding: 48px 32px;">
-      <div style="font-family: 'Bebas Neue', sans-serif; font-size: 72px; color: #1a1a1a; line-height: 1; margin-bottom: 16px;">03</div>
-      <div style="width: 40px; height: 3px; background: var(--red); margin-bottom: 20px;"></div>
-      <h3 style="font-size: 18px; font-weight: 500; color: #fff; margin-bottom: 12px;">We edit + optimize</h3>
-      <p style="font-size: 14px; color: var(--mid-gray); line-height: 1.7;">The system takes your raw footage and transforms it — editing, captions, graphics, music, and platform optimization handled end to end. You approve. We publish.</p>
+    <div style="background:var(--black); padding:48px 32px;">
+      <div style="font-family:'Bebas Neue',sans-serif; font-size:72px; color:#1a1a1a; line-height:1; margin-bottom:16px;">03</div>
+      <div style="width:40px; height:3px; background:var(--red); margin-bottom:20px;"></div>
+      <h3 style="font-size:18px; font-weight:500; color:#fff; margin-bottom:12px;">We edit + optimize</h3>
+      <p style="font-size:14px; color:var(--mid-gray); line-height:1.7;">The system takes your raw footage and transforms it — editing, captions, graphics, music, and platform optimization handled end to end. You approve. We publish.</p>
     </div>
-    <div style="background: #0f0f0f; padding: 48px 32px; border-left: 3px solid var(--red);">
-      <div style="font-family: 'Bebas Neue', sans-serif; font-size: 72px; color: #1a1a1a; line-height: 1; margin-bottom: 16px;">04</div>
-      <div style="width: 40px; height: 3px; background: var(--red); margin-bottom: 20px;"></div>
-      <h3 style="font-size: 18px; font-weight: 500; color: var(--red); margin-bottom: 12px;">You get leads</h3>
-      <p style="font-size: 14px; color: var(--mid-gray); line-height: 1.7;">Consistent, professional content builds your authority, grows your audience, and puts you in front of borrowers and buyers before they ever make a call. The system runs. You close.</p>
+    <div style="background:#0f0f0f; padding:48px 32px; border-left:3px solid var(--red);">
+      <div style="font-family:'Bebas Neue',sans-serif; font-size:72px; color:#1a1a1a; line-height:1; margin-bottom:16px;">04</div>
+      <div style="width:40px; height:3px; background:var(--red); margin-bottom:20px;"></div>
+      <h3 style="font-size:18px; font-weight:500; color:var(--red); margin-bottom:12px;">You get leads</h3>
+      <p style="font-size:14px; color:var(--mid-gray); line-height:1.7;">Consistent, professional content builds your authority, grows your audience, and puts you in front of borrowers and buyers before they ever make a call. The system runs. You close.</p>
     </div>
   </div>
-  <div style="margin-top: 48px; text-align: center;">
-    <a class="btn-primary" href="https://calendly.com/primitivemedia-co/free-strategy-call" target="_blank" style="display: inline-block;">See how the system works for you →</a>
+  <div style="margin-top:48px; text-align:center;">
+    <a class="btn-primary" href="https://calendly.com/primitivemedia-co/free-strategy-call" target="_blank" style="display:inline-block;">See how the system works for you →</a>
   </div>
 </section>
 
-<section id="results">
+<!-- RESULTS -->
+<section id="results" style="background:var(--black); border-top:1px solid #222;">
   <div class="section-header">
-    <p class="overline" style="color:var(--red);">Proven results</p>
-    <h2 class="section-title">Numbers that speak<br/>for themselves.</h2>
-    <p class="section-sub">Real results from real campaigns across mortgage, real estate, and national brands.</p>
+    <span class="overline" style="color:var(--red);">Proven results</span>
+    <h2 class="section-title" style="color:#fff;">Numbers that speak<br/>for themselves.</h2>
+    <p class="section-sub" style="color:var(--mid-gray);">Real results from real campaigns across mortgage, real estate, and national brands.</p>
   </div>
   <div class="results-grid">
     <div class="result-box"><div class="result-num">1.8M<em>+</em></div><div class="result-label">Views on a single video</div><div class="result-brand">Lowe's Home Improvement</div></div>
@@ -246,85 +248,86 @@ footer { background: #0a0a0a; border-top: 1px solid #1a1a1a; padding: 32px 48px;
   </div>
 </section>
 
-<section id="portfolio" style="background: #fff; border-top: 1px solid var(--warm-gray);">
+<!-- PORTFOLIO -->
+<section id="portfolio" style="background:#fff; border-top:1px solid var(--warm-gray);">
   <div class="section-header">
-    <p class="overline">Portfolio</p>
+    <span class="overline">Portfolio</span>
     <h2 class="section-title">Recent work.</h2>
-    <p class="section-sub">Real work for real clients — from social content and branded graphics to yard signs, email campaigns, and testimonial assets. Full case studies available on request.</p>
+    <p class="section-sub">Real work for real clients. Click any video to watch on Instagram.</p>
   </div>
-  <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--warm-gray); border: 1px solid var(--warm-gray); margin-bottom: 64px;">
-    <div class="port-item" style="aspect-ratio: 4/3; position: relative; overflow: hidden; cursor: pointer; background: #f0f0f0;">
-      <img src="https://drive.google.com/thumbnail?id=1dtmvBdtzqDwb45XKbDi51lrwRGXNhZGG&sz=w800" alt="CrossCountry Social Post" style="width:100%; height:100%; object-fit:cover;"/>
-      <div class="port-overlay" style="position:absolute; inset:0; background:var(--black); opacity:0; transition:opacity 0.3s; display:flex; flex-direction:column; justify-content:flex-end; padding:24px;">
-        <span style="display:inline-block; background:var(--red); color:#fff; font-size:10px; letter-spacing:1px; text-transform:uppercase; padding:3px 8px; margin-bottom:10px;">Branded Content</span>
-        <h4 style="font-size:16px; font-weight:500; color:#fff; margin-bottom:4px;">CrossCountry Mortgage — Social Post</h4>
-        <p style="font-size:12px; color:var(--mid-gray);">The Lubben Group · Branded content series</p>
-      </div>
-    </div>
-    <div class="port-item" style="aspect-ratio: 4/3; position: relative; overflow: hidden; cursor: pointer; background: #f0f0f0;">
-      <img src="https://drive.google.com/thumbnail?id=1cebOr88-DwzSvYOyynTRyUgF5iHOtfkn&sz=w800" alt="Back to School Banner" style="width:100%; height:100%; object-fit:cover;"/>
-      <div class="port-overlay" style="position:absolute; inset:0; background:var(--black); opacity:0; transition:opacity 0.3s; display:flex; flex-direction:column; justify-content:flex-end; padding:24px;">
-        <span style="display:inline-block; background:var(--red); color:#fff; font-size:10px; letter-spacing:1px; text-transform:uppercase; padding:3px 8px; margin-bottom:10px;">Event Sponsorship</span>
-        <h4 style="font-size:16px; font-weight:500; color:#fff; margin-bottom:4px;">Back to School Sponsored Banner</h4>
-        <p style="font-size:12px; color:var(--mid-gray);">Community event · Branded sponsorship asset</p>
-      </div>
-    </div>
-    <div class="port-item" style="aspect-ratio: 4/3; position: relative; overflow: hidden; cursor: pointer; background: #f0f0f0;">
-      <img src="https://drive.google.com/thumbnail?id=16vuWs5ABIjIKt6l4ZH0OMbn_IS8R1f9r&sz=w800" alt="Yard Sign" style="width:100%; height:100%; object-fit:cover;"/>
-      <div class="port-overlay" style="position:absolute; inset:0; background:var(--black); opacity:0; transition:opacity 0.3s; display:flex; flex-direction:column; justify-content:flex-end; padding:24px;">
-        <span style="display:inline-block; background:var(--red); color:#fff; font-size:10px; letter-spacing:1px; text-transform:uppercase; padding:3px 8px; margin-bottom:10px;">Print Design</span>
-        <h4 style="font-size:16px; font-weight:500; color:#fff; margin-bottom:4px;">Movement Mortgage — Yard Signs</h4>
-        <p style="font-size:12px; color:var(--mid-gray);">Heart to Home Team · Lauren & Andy Munsey</p>
-      </div>
-    </div>
-    <div class="port-item" style="aspect-ratio: 4/3; position: relative; overflow: hidden; cursor: pointer; background: #f0f0f0;">
-      <img src="https://drive.google.com/thumbnail?id=1C0Tullu-6_eFUIzBHdL7b2aN2sPyP3ph&sz=w800" alt="Yard Sign 2" style="width:100%; height:100%; object-fit:cover;"/>
-      <div class="port-overlay" style="position:absolute; inset:0; background:var(--black); opacity:0; transition:opacity 0.3s; display:flex; flex-direction:column; justify-content:flex-end; padding:24px;">
-        <span style="display:inline-block; background:var(--red); color:#fff; font-size:10px; letter-spacing:1px; text-transform:uppercase; padding:3px 8px; margin-bottom:10px;">Print Design</span>
-        <h4 style="font-size:16px; font-weight:500; color:#fff; margin-bottom:4px;">Movement Mortgage — Yard Signs</h4>
-        <p style="font-size:12px; color:var(--mid-gray);">Heart to Home Team · Open house series</p>
-      </div>
-    </div>
-    <div class="port-item" style="aspect-ratio: 4/3; position: relative; overflow: hidden; cursor: pointer; background: #f0f0f0;">
-      <img src="https://drive.google.com/thumbnail?id=1kbkxOCxKYvpJKVa8fpNX1D8LZiUFyALR&sz=w800" alt="Client Review" style="width:100%; height:100%; object-fit:cover;"/>
-      <div class="port-overlay" style="position:absolute; inset:0; background:var(--black); opacity:0; transition:opacity 0.3s; display:flex; flex-direction:column; justify-content:flex-end; padding:24px;">
-        <span style="display:inline-block; background:var(--red); color:#fff; font-size:10px; letter-spacing:1px; text-transform:uppercase; padding:3px 8px; margin-bottom:10px;">Social Asset</span>
-        <h4 style="font-size:16px; font-weight:500; color:#fff; margin-bottom:4px;">Client Review Graphic</h4>
-        <p style="font-size:12px; color:var(--mid-gray);">CrossCountry Mortgage · Branded testimonial post</p>
-      </div>
-    </div>
-    <div class="port-item" style="aspect-ratio: 4/3; position: relative; overflow: hidden; cursor: pointer; background: #f0f0f0;">
-      <img src="https://drive.google.com/thumbnail?id=1HHFQuQOBhvoJLOoea_VXzfmxpnSIlmOb&sz=w800" alt="Client Testimonial" style="width:100%; height:100%; object-fit:cover;"/>
-      <div class="port-overlay" style="position:absolute; inset:0; background:var(--black); opacity:0; transition:opacity 0.3s; display:flex; flex-direction:column; justify-content:flex-end; padding:24px;">
-        <span style="display:inline-block; background:var(--red); color:#fff; font-size:10px; letter-spacing:1px; text-transform:uppercase; padding:3px 8px; margin-bottom:10px;">Social Asset</span>
-        <h4 style="font-size:16px; font-weight:500; color:#fff; margin-bottom:4px;">Client Testimonial Graphic</h4>
-        <p style="font-size:12px; color:var(--mid-gray);">CrossCountry Mortgage · The Lubben Group</p>
-      </div>
+
+  <span class="overline" style="margin-bottom:16px;">Mortgage & Real Estate</span>
+  <div class="port-grid">
+    <a href="https://www.instagram.com/reel/DHboM3ITx3b/" target="_blank" class="port-item">
+      <img src="https://drive.google.com/thumbnail?id=1dtmvBdtzqDwb45XKbDi51lrwRGXNhZGG&sz=w800" alt="Mortgage Reel 1"/>
+      <div class="port-overlay"><span class="port-tag">▶ Watch on Instagram</span><h4>Mortgage Content — Reel</h4><p>Real estate & mortgage · Short-form video</p></div>
+    </a>
+    <a href="https://www.instagram.com/reel/DGwglJiTLlL/" target="_blank" class="port-item">
+      <img src="https://drive.google.com/thumbnail?id=1HHFQuQOBhvoJLOoea_VXzfmxpnSIlmOb&sz=w800" alt="Mortgage Reel 2"/>
+      <div class="port-overlay"><span class="port-tag">▶ Watch on Instagram</span><h4>Mortgage Content — Reel</h4><p>Real estate & mortgage · Short-form video</p></div>
+    </a>
+    <a href="https://www.instagram.com/reel/DGjkTzkTd6H/" target="_blank" class="port-item">
+      <img src="https://drive.google.com/thumbnail?id=1kbkxOCxKYvpJKVa8fpNX1D8LZiUFyALR&sz=w800" alt="Mortgage Reel 3"/>
+      <div class="port-overlay"><span class="port-tag">▶ Watch on Instagram</span><h4>Mortgage Content — Reel</h4><p>Real estate & mortgage · Short-form video</p></div>
+    </a>
+  </div>
+
+  <span class="overline" style="margin-bottom:16px;">Lowe's & Miscellaneous</span>
+  <div class="port-grid">
+    <a href="https://www.instagram.com/reel/DNRR6J2PBe2/" target="_blank" class="port-item">
+      <img src="https://drive.google.com/thumbnail?id=1cebOr88-DwzSvYOyynTRyUgF5iHOtfkn&sz=w800" alt="Lowes Reel 1"/>
+      <div class="port-overlay"><span class="port-tag">▶ Watch on Instagram</span><h4>Lowe's Home Improvement — Reel</h4><p>Lowe's Careers · Short-form video campaign</p></div>
+    </a>
+    <a href="https://www.instagram.com/reel/C8Coe4nxDxY/" target="_blank" class="port-item">
+      <img src="https://drive.google.com/thumbnail?id=16vuWs5ABIjIKt6l4ZH0OMbn_IS8R1f9r&sz=w800" alt="Lowes Reel 2"/>
+      <div class="port-overlay"><span class="port-tag">▶ Watch on Instagram</span><h4>Lowe's Home Improvement — Reel</h4><p>Lowe's Careers · 1.8M+ views campaign</p></div>
+    </a>
+    <div class="port-item">
+      <img src="https://drive.google.com/thumbnail?id=1C0Tullu-6_eFUIzBHdL7b2aN2sPyP3ph&sz=w800" alt="Yard Sign"/>
+      <div class="port-overlay"><span class="port-tag">Print Design</span><h4>Movement Mortgage — Yard Signs</h4><p>Heart to Home Team · Open house series</p></div>
     </div>
   </div>
-  <p class="overline" style="margin-bottom: 16px;">Email Marketing — Automated Header Series</p>
-  <div style="display: grid; grid-template-columns: repeat(6, 1fr); gap: 8px; margin-bottom: 32px;">
-    <img src="https://drive.google.com/thumbnail?id=12AtJ03H9Hf0yicfvPIJr2URcWoJTd1UV&sz=w400" style="width:100%; aspect-ratio:16/9; object-fit:cover; border: 1px solid var(--warm-gray);" alt="Email Header 1"/>
-    <img src="https://drive.google.com/thumbnail?id=1CozZh3urJz3fAiwZI4XvgsRtmYQYQkCI&sz=w400" style="width:100%; aspect-ratio:16/9; object-fit:cover; border: 1px solid var(--warm-gray);" alt="Email Header 2"/>
-    <img src="https://drive.google.com/thumbnail?id=1-mM0t6L44zV9cS6FLrYWGBnW-LgWTf9n&sz=w400" style="width:100%; aspect-ratio:16/9; object-fit:cover; border: 1px solid var(--warm-gray);" alt="Email Header 3"/>
-    <img src="https://drive.google.com/thumbnail?id=1oIt1HpFdBR_ufAzsVJB4T1XPC0fMmoPY&sz=w400" style="width:100%; aspect-ratio:16/9; object-fit:cover; border: 1px solid var(--warm-gray);" alt="Email Header 4"/>
-    <img src="https://drive.google.com/thumbnail?id=1A57cmIfYAz9kMrR86h2U98qpZY7W_omI&sz=w400" style="width:100%; aspect-ratio:16/9; object-fit:cover; border: 1px solid var(--warm-gray);" alt="Email Header 5"/>
-    <img src="https://drive.google.com/thumbnail?id=1s98j7e4wl7xTWsXxE6prqI8mzKDRzk4r&sz=w400" style="width:100%; aspect-ratio:16/9; object-fit:cover; border: 1px solid var(--warm-gray);" alt="Email Header 6"/>
+
+  <span class="overline" style="margin-bottom:16px;">Branded Graphics & Design</span>
+  <div class="port-grid" style="margin-bottom:32px;">
+    <div class="port-item">
+      <img src="https://drive.google.com/thumbnail?id=1jfpRp3Fw50PaKTjD_1oCUb26p_E_6cri&sz=w800" alt="Client Graphics"/>
+      <div class="port-overlay"><span class="port-tag">Graphic Design</span><h4>Client Graphics</h4><p>Branded social assets</p></div>
+    </div>
+    <div class="port-item">
+      <img src="https://drive.google.com/thumbnail?id=1nZvvumhUZ1YbvvqnMBiHeJg7aemZWJwE&sz=w800" alt="Client Testimonial"/>
+      <div class="port-overlay"><span class="port-tag">Social Asset</span><h4>Client Testimonial Graphic</h4><p>CrossCountry Mortgage · The Lubben Group</p></div>
+    </div>
+    <div class="port-item">
+      <img src="https://drive.google.com/thumbnail?id=1qMMjgfcC2KNgf8N4BabzXQ28wrVLUIkT&sz=w800" alt="Yard Sign 4"/>
+      <div class="port-overlay"><span class="port-tag">Print Design</span><h4>Movement Mortgage — Yard Sign</h4><p>Heart to Home Team · Lauren & Andy Munsey</p></div>
+    </div>
   </div>
-  <p class="portfolio-note">* Full case studies and work samples available upon request during your strategy call.</p>
+
+  <span class="overline" style="margin-bottom:16px;">Email Marketing — Automated Header Series</span>
+  <div style="display:grid; grid-template-columns:repeat(6,1fr); gap:8px; margin-bottom:32px;">
+    <img src="https://drive.google.com/thumbnail?id=12AtJ03H9Hf0yicfvPIJr2URcWoJTd1UV&sz=w400" style="width:100%; aspect-ratio:16/9; object-fit:cover; border:1px solid var(--warm-gray);" alt="Email Header 1"/>
+    <img src="https://drive.google.com/thumbnail?id=1CozZh3urJz3fAiwZI4XvgsRtmYQYQkCI&sz=w400" style="width:100%; aspect-ratio:16/9; object-fit:cover; border:1px solid var(--warm-gray);" alt="Email Header 2"/>
+    <img src="https://drive.google.com/thumbnail?id=1-mM0t6L44zV9cS6FLrYWGBnW-LgWTf9n&sz=w400" style="width:100%; aspect-ratio:16/9; object-fit:cover; border:1px solid var(--warm-gray);" alt="Email Header 3"/>
+    <img src="https://drive.google.com/thumbnail?id=1oIt1HpFdBR_ufAzsVJB4T1XPC0fMmoPY&sz=w400" style="width:100%; aspect-ratio:16/9; object-fit:cover; border:1px solid var(--warm-gray);" alt="Email Header 4"/>
+    <img src="https://drive.google.com/thumbnail?id=1A57cmIfYAz9kMrR86h2U98qpZY7W_omI&sz=w400" style="width:100%; aspect-ratio:16/9; object-fit:cover; border:1px solid var(--warm-gray);" alt="Email Header 5"/>
+    <img src="https://drive.google.com/thumbnail?id=1s98j7e4wl7xTWsXxE6prqI8mzKDRzk4r&sz=w400" style="width:100%; aspect-ratio:16/9; object-fit:cover; border:1px solid var(--warm-gray);" alt="Email Header 6"/>
+  </div>
+  <p style="font-size:14px; color:var(--mid-gray); font-style:italic;">* Full case studies and work samples available upon request during your strategy call.</p>
 </section>
 
-<section id="pricing" style="background: var(--off-white); border-top: 1px solid var(--warm-gray);">
+<!-- PRICING -->
+<section id="pricing" style="background:var(--off-white); border-top:1px solid var(--warm-gray);">
   <div class="section-header">
-    <p class="overline">Packages</p>
+    <span class="overline">Packages</span>
     <h2 class="section-title">Simple, transparent pricing.</h2>
     <p class="section-sub">Choose the package that fits where you are right now. Every package includes scripts, captions, editing, and scheduling — you just film.</p>
   </div>
-  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1px; background: var(--warm-gray); border: 1px solid var(--warm-gray); margin-bottom: 48px;">
-    <div style="background: #fff; padding: 40px 28px;">
+  <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(220px,1fr)); gap:1px; background:var(--warm-gray); border:1px solid var(--warm-gray); margin-bottom:48px;">
+    <div style="background:#fff; padding:40px 28px;">
       <p style="font-size:11px; letter-spacing:2px; text-transform:uppercase; color:var(--mid-gray); margin-bottom:12px;">Starter</p>
       <div style="font-family:'Bebas Neue',sans-serif; font-size:48px; color:var(--black); line-height:1;">$497<span style="font-size:18px; font-family:'DM Sans',sans-serif; color:var(--mid-gray); font-weight:300;">/mo</span></div>
-      <p style="font-size:13px; color:var(--mid-gray); margin: 8px 0 24px;">4 videos per month</p>
+      <p style="font-size:13px; color:var(--mid-gray); margin:8px 0 24px;">4 videos per month</p>
       <div style="width:32px; height:2px; background:var(--warm-gray); margin-bottom:24px;"></div>
       <ul style="list-style:none; display:flex; flex-direction:column; gap:10px; margin-bottom:32px;">
         <li style="font-size:13px; color:#555;">→ Scripts + captions</li>
@@ -335,10 +338,10 @@ footer { background: #0a0a0a; border-top: 1px solid #1a1a1a; padding: 32px 48px;
       </ul>
       <a href="https://calendly.com/primitivemedia-co/free-strategy-call" target="_blank" style="display:block; text-align:center; background:var(--black); color:#fff; padding:12px; font-size:13px; font-weight:500; text-decoration:none; letter-spacing:0.5px;">Get started →</a>
     </div>
-    <div style="background: #fff; padding: 40px 28px;">
+    <div style="background:#fff; padding:40px 28px;">
       <p style="font-size:11px; letter-spacing:2px; text-transform:uppercase; color:var(--mid-gray); margin-bottom:12px;">Growth</p>
       <div style="font-family:'Bebas Neue',sans-serif; font-size:48px; color:var(--black); line-height:1;">$997<span style="font-size:18px; font-family:'DM Sans',sans-serif; color:var(--mid-gray); font-weight:300;">/mo</span></div>
-      <p style="font-size:13px; color:var(--mid-gray); margin: 8px 0 24px;">8 videos per month</p>
+      <p style="font-size:13px; color:var(--mid-gray); margin:8px 0 24px;">8 videos per month</p>
       <div style="width:32px; height:2px; background:var(--warm-gray); margin-bottom:24px;"></div>
       <ul style="list-style:none; display:flex; flex-direction:column; gap:10px; margin-bottom:32px;">
         <li style="font-size:13px; color:#555;">→ Scripts + captions</li>
@@ -350,10 +353,10 @@ footer { background: #0a0a0a; border-top: 1px solid #1a1a1a; padding: 32px 48px;
       </ul>
       <a href="https://calendly.com/primitivemedia-co/free-strategy-call" target="_blank" style="display:block; text-align:center; background:var(--black); color:#fff; padding:12px; font-size:13px; font-weight:500; text-decoration:none; letter-spacing:0.5px;">Get started →</a>
     </div>
-    <div style="background: var(--black); padding: 40px 28px;">
+    <div style="background:var(--black); padding:40px 28px;">
       <p style="font-size:11px; letter-spacing:2px; text-transform:uppercase; color:var(--red); margin-bottom:12px;">Pro · Most Popular</p>
       <div style="font-family:'Bebas Neue',sans-serif; font-size:48px; color:#fff; line-height:1;">$1,597<span style="font-size:18px; font-family:'DM Sans',sans-serif; color:var(--mid-gray); font-weight:300;">/mo</span></div>
-      <p style="font-size:13px; color:var(--mid-gray); margin: 8px 0 24px;">12 videos per month</p>
+      <p style="font-size:13px; color:var(--mid-gray); margin:8px 0 24px;">12 videos per month</p>
       <div style="width:32px; height:2px; background:var(--red); margin-bottom:24px;"></div>
       <ul style="list-style:none; display:flex; flex-direction:column; gap:10px; margin-bottom:32px;">
         <li style="font-size:13px; color:#aaa;">→ Scripts + captions</li>
@@ -365,10 +368,10 @@ footer { background: #0a0a0a; border-top: 1px solid #1a1a1a; padding: 32px 48px;
       </ul>
       <a href="https://calendly.com/primitivemedia-co/free-strategy-call" target="_blank" style="display:block; text-align:center; background:var(--red); color:#fff; padding:12px; font-size:13px; font-weight:500; text-decoration:none; letter-spacing:0.5px;">Get started →</a>
     </div>
-    <div style="background: #fff; padding: 40px 28px;">
+    <div style="background:#fff; padding:40px 28px;">
       <p style="font-size:11px; letter-spacing:2px; text-transform:uppercase; color:var(--mid-gray); margin-bottom:12px;">Elite</p>
       <div style="font-family:'Bebas Neue',sans-serif; font-size:48px; color:var(--black); line-height:1;">$2,497<span style="font-size:18px; font-family:'DM Sans',sans-serif; color:var(--mid-gray); font-weight:300;">/mo</span></div>
-      <p style="font-size:13px; color:var(--mid-gray); margin: 8px 0 24px;">16 videos per month</p>
+      <p style="font-size:13px; color:var(--mid-gray); margin:8px 0 24px;">16 videos per month</p>
       <div style="width:32px; height:2px; background:var(--warm-gray); margin-bottom:24px;"></div>
       <ul style="list-style:none; display:flex; flex-direction:column; gap:10px; margin-bottom:32px;">
         <li style="font-size:13px; color:#555;">→ Scripts + captions</li>
@@ -381,8 +384,8 @@ footer { background: #0a0a0a; border-top: 1px solid #1a1a1a; padding: 32px 48px;
       <a href="https://calendly.com/primitivemedia-co/free-strategy-call" target="_blank" style="display:block; text-align:center; background:var(--black); color:#fff; padding:12px; font-size:13px; font-weight:500; text-decoration:none; letter-spacing:0.5px;">Get started →</a>
     </div>
   </div>
-  <p class="overline" style="margin-bottom:24px;">Add-On Services</p>
-  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1px; background: var(--warm-gray); border: 1px solid var(--warm-gray);">
+  <span class="overline" style="margin-bottom:24px;">Add-On Services</span>
+  <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(280px,1fr)); gap:1px; background:var(--warm-gray); border:1px solid var(--warm-gray);">
     <div style="background:#fff; padding:24px 28px;"><h4 style="font-size:14px; font-weight:500; color:var(--black); margin-bottom:6px;">AI Growth Dashboard</h4><p style="font-size:13px; color:var(--mid-gray);">$297 setup · $97/mo</p></div>
     <div style="background:#fff; padding:24px 28px;"><h4 style="font-size:14px; font-weight:500; color:var(--black); margin-bottom:6px;">Meta Paid Ads Management</h4><p style="font-size:13px; color:var(--mid-gray);">$500 setup · $497/mo + ad spend</p></div>
     <div style="background:#fff; padding:24px 28px;"><h4 style="font-size:14px; font-weight:500; color:var(--black); margin-bottom:6px;">Extra Video (beyond package)</h4><p style="font-size:13px; color:var(--mid-gray);">$75/video</p></div>
@@ -393,9 +396,10 @@ footer { background: #0a0a0a; border-top: 1px solid #1a1a1a; padding: 32px 48px;
   <p style="font-size:13px; color:var(--mid-gray); margin-top:16px; font-style:italic;">Annual contracts receive 10% off. All packages include content calendar, scripts, captions, hashtag strategy, and scheduling.</p>
 </section>
 
-<section id="booking">
+<!-- BOOKING -->
+<section id="booking" style="background:var(--off-white); border-top:1px solid var(--warm-gray);">
   <div class="section-header">
-    <p class="overline">Work with me</p>
+    <span class="overline">Work with me</span>
     <h2 class="section-title">Let's get started.</h2>
     <p class="section-sub">Choose how you want to connect. No pressure — just a real conversation about your business and what's possible.</p>
   </div>
@@ -429,11 +433,12 @@ footer { background: #0a0a0a; border-top: 1px solid #1a1a1a; padding: 32px 48px;
   </div>
 </section>
 
-<section id="contact">
+<!-- CONTACT -->
+<section id="contact" style="background:var(--black);">
   <div class="section-header">
-    <p class="overline" style="color:var(--red);">Get in touch</p>
-    <h2 class="section-title">Ready to grow?</h2>
-    <p class="section-sub">Send me a message and I'll get back to you within 24 hours.</p>
+    <span class="overline" style="color:var(--red);">Get in touch</span>
+    <h2 class="section-title" style="color:#fff;">Ready to grow?</h2>
+    <p class="section-sub" style="color:var(--mid-gray);">Send me a message and I'll get back to you within 24 hours.</p>
   </div>
   <div class="contact-grid">
     <form class="contact-form" onsubmit="handleSubmit(event)">
@@ -457,6 +462,7 @@ footer { background: #0a0a0a; border-top: 1px solid #1a1a1a; padding: 32px 48px;
   </div>
 </section>
 
+<!-- FOOTER -->
 <footer>
   <span class="footer-brand">Primitive Media</span>
   <span class="footer-copy">© 2025 Primitive Media · Anna-Marie Cline · Charlotte, NC</span>
@@ -468,6 +474,7 @@ footer { background: #0a0a0a; border-top: 1px solid #1a1a1a; padding: 32px 48px;
     <a href="#contact">Contact</a>
   </div>
 </footer>
+
 <script>
 function handleSubmit(e) {
   e.preventDefault();
